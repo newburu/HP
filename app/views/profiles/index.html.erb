@@ -2,8 +2,29 @@
   <head>
     <% provide(:title, 'プロフィール') %>
   </head>
-    <%= render partial: '/shared/header' %>
-  <div class="justify-content-center">
+  <%= render partial: '/shared/header' %>
+  <div class="container w-50 p-3">
     <h2 class="text-center">プロフィール</h2>
+    <div class="p-3 mb-2 text-center" id="wrapper">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-sm-5">
+            <%= image_tag "human.png" %>
+          </div>
+          <div class="col-sm-7 mt-4">
+            <h3>パーソナルカラー診断／骨格診断／起業コンサルタント</h3>
+            <div class="mt-5">
+              <div class="d-inline">
+                <span>石田 百合子</span>
+              </div>
+              <div class="d-inline p-5">
+                <span class="en">Ishida Yuriko</span>
+              </div>
+            </div>
+            <p class="mt-4">テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。</p>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </html>
