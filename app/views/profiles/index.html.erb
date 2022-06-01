@@ -1,30 +1,59 @@
-<html>  
-  <head>
-    <% provide(:title, 'プロフィール') %>
-  </head>
-  <%= render partial: '/shared/header' %>
-  <div class="container w-50 p-3">
-    <h2 class="text-center mb-5">プロフィール</h2>
-    <div class="p-3 mb-2 text-center" id="wrapper">
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-sm-5">
-            <%= image_tag "human.png" %>
-          </div>
-          <div class="col-sm-7 mt-4">
-            <h3>パーソナルカラー診断／骨格診断／起業コンサルタント</h3>
-            <div class="mt-5">
-              <div class="d-inline">
-                <span>石田 百合子</span>
-              </div>
-              <div class="d-inline p-5">
-                <span class="en">Ishida Yuriko</span>
-              </div>
+<head>
+  <% provide(:title, 'プロフィール') %>
+</head>
+
+<%= render partial: '/shared/header' %>
+<div class="container w-50 p-3 text-center">
+  <h2 class="mb-5">プロフィール</h2>
+  <div class="p-3 mb-2" id="wrapper">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-5 mt-5">
+          <%= image_tag "human.png" %>
+        </div>
+        <div class="col-sm-7 mt-4">
+          <h3>パーソナルカラー診断／骨格診断／起業コンサルタント</h3>
+          <div class="mt-5">
+            <div class="d-inline">
+              <span>石田 百合子</span>
             </div>
-            <p class="mt-4">テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。</p>
+            <div class="d-inline p-5">
+              <span class="en">Ishida Yuriko</span>
+            </div>
           </div>
+          <p class="mt-4">テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。</p>
+          <ul class="socialEffect__box">
+            <li>
+              <div class="socialEffect__link icon-instagram">
+                <%= link_to image_tag("instagram.png", class: "fab fa-instagram"), "https://www.instagram.com/yuricolor/", target: :_blank, rel: "noopener noreferrer" %>
+              </div>
+            </li>
+            <li>
+              <div class="socialEffect__link icon-facebook">
+                <%= link_to image_tag("facebook.png", class: "fab fa-facebook"), "https://www.facebook.com/ishida.yuriko.12", target: :_blank, rel: "noopener noreferrer" %>
+              </div>
+            </li>
+            <li>
+              <div class="socialEffect__link icon-twitter">
+                <%= link_to image_tag("twitter.png", class: "fab fa-twitter"), "https://twitter.com/yuriko_lis", target: :_blank, rel: "noopener noreferrer" %>
+              </div>
+            </li>
+          </ul>
         </div>
       </div>
     </div>
   </div>
-</html>
+  <h2 class="mt-5">ストーリー</h2>
+  <div class="p-3 mb-2" id="story">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-5 mt-5">
+          <%= image_tag "human.png" %>
+        </div>
+        <div class="col-sm-7 mt-4">
+          <p class="mt-4">テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
