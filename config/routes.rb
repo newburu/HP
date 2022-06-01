@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   resources :articles
   resources :profiles, :only => :index
   get '/contacts', to: 'contacts#index'
+  root to: 'home#index'
 end
