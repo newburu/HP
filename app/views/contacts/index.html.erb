@@ -1,0 +1,125 @@
+<% provide(:title, 'お問い合わせ') %>
+
+<%= render partial: '/shared/header' %>
+
+<div class="container-fluid w-75 p-3 text-center" id="content">
+  <div class="mt-2 mb-5 mr-5">
+    <h2 class="display-4">Contact</h2>
+    <span><p class="small">お問い合わせ</p></span>
+  </div>
+  <form>
+    <div class="form-group row">
+      <label class="col-sm-2 col-form-label">名前</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control form-control-lg col-sm-8" placeholder="名前を入力してください">
+      </div>
+    </div>
+    <div class="form-group row mt-5">
+      <label class="col-sm-2 col-form-label">ふりがな</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control form-control-lg col-sm-8" placeholder="ふりがなを入力してください">
+      </div>
+    </div>
+    <div class="form-group row mt-5">
+      <label class="col-sm-2 col-form-label">メールアドレス</label>
+      <div class="col-sm-10">
+        <input type="email" class="form-control form-control-lg col-sm-8" placeholder="メールアドレスを入力してください">
+      </div>
+    </div>
+  </form>
+  <div class="row mt-5">
+    <label class="col-sm-2 col-form-label">ご内容</label>
+    <div class="col-sm-10 text-left pt-2">
+      <div class="row ml-1">
+        <div class="form-check form-check-inline col-sm-3">
+          <input type="radio" class="form-check-input" name="flexRadioDefault" value="option1">
+          <label class="form-check-label">ご予約</label>
+        </div>
+        <div class="form-check form-check-inline col-sm-3">
+          <input type="radio" class="form-check-input" name="flexRadioDefault" value="option2">
+          <label class="form-check-label">お問い合わせ</label>
+        </div>
+        <div class="form-check form-check-inline col-sm-3">
+          <input type="radio" class="form-check-input" name="flexRadioDefault" value="option3">
+          <label class="form-check-label">その他</label>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row mt-5">
+    <label class="col-sm-2 col-form-label">ご希望のメニュー</label>
+    <div class="col-sm-9 text-left pt-2 ml-1">
+      <div class="form-check form-check-inline row">
+        <div class="checkbox-inline col-sm-3">
+          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+          <label class="form-check-label mr-2" for="flexCheckDefault">トータルコース</label>
+        </div>
+        <div class="checkbox-inline col-sm-4">
+          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+          <label class="form-check-label mr-2" for="flexCheckDefault">パーソナルカラー診断</label>
+        </div>
+        <div class="checkbox-inline col-sm-4">
+          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+          <label class="form-check-label mr-2" for="flexCheckDefault">顔タイプ骨格診断</label>
+        </div>
+        <div class="checkbox-inline col-sm-3 mt-4">
+          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+          <label class="form-check-label mr-2" for="flexCheckDefault">色見本帳購入</label>
+        </div>
+        <div class="checkbox-inline col-sm-4 mt-4">
+          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+          <label class="form-check-label mr-2" for="flexCheckDefault">パーソナルカラー養成講座無料相談</label>
+        </div>
+        <div class="checkbox-inline col-sm-4 mt-4">
+          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+          <label class="form-check-label mr-2" for="flexCheckDefault">講座・講演依頼</label>
+        </div> 
+      </div>
+    </div>
+  </div>
+  <div class="row mt-5">
+    <label class="col-sm-2 col-form-label">お顔出し割引適用</label>
+    <div class="col-sm-10 text-left pt-2">
+      <div class="row ml-1">
+        <div class="form-check form-check-inline col-sm-3">
+          <input type="radio" class="form-check-input" name="flexRadioDefault" value="option1">
+          <label class="form-check-label">あり(割引料金)</label>
+        </div>
+        <div class="form-check form-check-inline col-sm-3">
+          <input type="radio" class="form-check-input" name="flexRadioDefault" value="option2">
+          <label class="form-check-label">なし(通常料金)</label>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row mt-5">
+    <label class="col-sm-2 col-form-label">お支払い方法</label>
+    <div class="col-sm-10 text-left pt-2">
+      <div class="row ml-1">
+        <div class="form-check form-check-inline col-sm-2">
+          <input type="radio" class="form-check-input" name="flexRadioDefault" value="option1">
+          <label class="form-check-label">銀行振込</label>
+        </div>
+        <div class="form-check form-check-inline col-sm-3">
+          <input type="radio" class="form-check-input" name="flexRadioDefault" value="option2">
+          <label class="form-check-label">クレジットカード決済</label>
+        </div>
+        <div class="form-check form-check-inline col-sm-2">
+          <input type="radio" class="form-check-input" name="flexRadioDefault" value="option1">
+          <label class="form-check-label">無料相談</label>
+        </div>
+        <div class="form-check form-check-inline col-sm-2">
+          <input type="radio" class="form-check-input" name="flexRadioDefault" value="option2">
+          <label class="form-check-label">その他</label>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row mt-5">
+    <label class="col-sm-2 col-form-label">お問い合わせ内容</label>
+    <div class="col-sm-7">
+      <textarea class="form-control" rows="8"></textarea>
+    </div>
+  </div>
+  <button type="button" class="btn btn-primary btn-lg mt-5">送信</button>
+</div>
