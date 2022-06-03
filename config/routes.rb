@@ -3,5 +3,8 @@ Rails.application.routes.draw do
 
   resources :articles
   resources :profiles, :only => :index
-  get '/contacts', to: 'contacts#index'
+  resource :contacts, :only => [:new, :create] do
+    post 'confirm', to: 'contacts#confirm', as: 'confirm'
+    get 'finish', to: 'contacts#finish', as: 'finish'
+  end
 end
