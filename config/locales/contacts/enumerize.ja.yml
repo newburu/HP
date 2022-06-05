@@ -5,3 +5,18 @@ ja:
         reserve: 'ご予約'
         inquiry: 'お問い合わせ'
         other: 'その他'
+      menu:
+        total_course: 'トータルコース'
+        personal_color_analysis: 'パーソナルカラー診断'
+        face_type_skeleton_diagnosis: '顔タイプ骨格診断'
+        purchase_color_sample_book: '色見本帳購入'
+        free_consultation_for_personal_color_training_course: 'パーソナルカラー養成講座無料相談'
+        lecture_and_lecture_requests: '講座・講演依頼'
+      discount:
+        discounted_rates: '割引料金'
+        regular_rate: '通常料金'
+      payment:
+        bank_transfer: '銀行振込'
+        credit_card: 'クレジットカード'
+        free_consultation: '無料相談'
+        other: 'その他'

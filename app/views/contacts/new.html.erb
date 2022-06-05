@@ -2,126 +2,126 @@
 
 <%= render partial: '/shared/header' %>
 
-<div class="container-fluid w-50 p-3 text-center" id="content">
-  <div class="mt-2 mb-5 mr-5">
-    <h2 class="display-4">Contact</h2>
-    <span><p class="small">お問い合わせ</p></span>
+<div class='container-fluid w-50 p-3 text-center' id='content'>
+  <div class='mt-2 mb-5 mr-5'>
+    <h2 class='display-4'>Contact</h2>
+    <span><p class='small'>お問い合わせ</p></span>
   </div>
-  <%= form_with url: 'confirm_contacts_path' do |f| %>
+  <%= form_with url: 'confirm_contacts_path',local: true do |f| %>
   <form>
-    <div class="form-group row">
-      <label class="col-sm-2 col-form-label">名前</label>
-      <div class="col-sm-10">
-        <%= f.text_field :name, class: "form-control form-control-lg col-sm-8", placeholder: "名前を入力してください" %>
+    <div class='form-group row'>
+      <%= f.label :name, '名前', class: 'col-sm-2 col-form-label' %>
+      <div class='col-sm-10'>
+        <%= f.text_field :name, class: 'form-control form-control-lg col-sm-8', placeholder: '名前を入力してください' %>
       </div>
     </div>
-    <div class="form-group row mt-5">
-      <label class="col-sm-2 col-form-label">ふりがな</label>
-      <div class="col-sm-10">
-        <%= f.text_field :name_hiragana, class: "form-control form-control-lg col-sm-8", placeholder: "ふりがなを入力してください" %>
+    <div class='form-group row mt-5'>
+      <%= f.label :name_hiragana, 'ふりがな', class: 'col-sm-2 col-form-label' %>
+      <div class='col-sm-10'>
+        <%= f.text_field :name_hiragana, class: 'form-control form-control-lg col-sm-8', placeholder: 'ふりがなを入力してください' %>
       </div>
     </div>
-    <div class="form-group row mt-5">
-      <label class="col-sm-2 col-form-label">メールアドレス</label>
-      <div class="col-sm-10">
-        <%= f.email_field :email, class: "form-control form-control-lg col-sm-8", placeholder: "メールアドレスを入力してください" %>
+    <div class='form-group row mt-5'>
+      <%= f.label :email, 'メールアドレス', class: 'col-sm-2 col-form-label' %>
+      <div class='col-sm-10'>
+        <%= f.email_field :email, class: 'form-control form-control-lg col-sm-8', placeholder: 'メールアドレスを入力してください' %>
       </div>
     </div>
   </form>
-  <div class="row mt-5">
-    <label class="col-sm-2 col-form-label">ご内容</label>
-    <div class="col-sm-10 text-left pt-2">
-      <div class="row ml-1">
-        <div class="form-check form-check-inline col-sm-3">
-          <%= f.radio_button :matter, 'reserve', class: "form-check-input", name: "flexRadioDefault"%>
-          <label class='form-check-label'>ご予約</label>
+  <div class='row mt-5'>
+    <%= f.label :matter, 'ご内容', class: 'col-sm-2 col-form-label' %>
+    <div class='col-sm-10 text-left pt-2'>
+      <div class='row ml-1'>
+        <div class='form-check form-check-inline col-sm-3'>
+          <%= f.radio_button :matter, 'reserve', class: 'form-check-input', name: 'flexRadioDefault' %>
+          <%= f.label :matter, 'ご予約', class: 'form-check-label' %>
         </div>
-        <div class="form-check form-check-inline col-sm-3">
-          <%= f.radio_button :matter, :inquiry, class: "form-check-input", name: "flexRadioDefault"%>
-          <label class='form-check-label'>お問い合わせ</label>
+        <div class='form-check form-check-inline col-sm-3'>
+          <%= f.radio_button :matter, :inquiry, class: 'form-check-input', name: 'flexRadioDefault' %>
+          <%= f.label :matter, 'お問い合わせ', class: 'form-check-label' %>
         </div>
-        <div class="form-check form-check-inline col-sm-3">
-          <%= f.radio_button :matter, :other, class: "form-check-input", name: "flexRadioDefault"%>
-          <label class='form-check-label'>その他</label>
+        <div class='form-check form-check-inline col-sm-3'>
+          <%= f.radio_button :matter, :other, class: 'form-check-input', name: 'flexRadioDefault' %>
+          <%= f.label :matter, 'その他', class: 'form-check-label' %>
         </div>
       </div>
     </div>
   </div>
-  <div class="row mt-5">
-    <label class="col-sm-2 col-form-label">ご希望のメニュー</label>
-    <div class="col-sm-9 text-left pt-2 ml-1">
-      <div class="form-check form-check-inline row">
-        <div class="checkbox-inline col-sm-3">
-          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-          <label class="form-check-label mr-2" for="flexCheckDefault">トータルコース</label>
+  <div class='row mt-5'>
+    <%= f.label :menu, 'ご希望のメニュー', class: 'col-sm-2 col-form-label' %>
+    <div class='col-sm-9 text-left pt-2 ml-1'>
+      <div class='form-check form-check-inline row'>
+        <div class='checkbox-inline col-sm-3'>
+          <%= f.check_box :menu, {class: 'form-check-input'}, id: 'flexCheckDefault', value: 'total_course' %>
+          <%= f.label :menu, 'トータルコース', class: 'form-check-label mr-2', for: 'flexCheckDefault' %>
         </div>
-        <div class="checkbox-inline col-sm-4">
-          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-          <label class="form-check-label mr-2" for="flexCheckDefault">パーソナルカラー診断</label>
+        <div class='checkbox-inline col-sm-4'>
+          <%= f.check_box :menu, {class: 'form-check-input'}, id: 'flexCheckDefault', value: 'personal_color_analysis' %>
+          <%= f.label :menu, 'パーソナルカラー診断', class: 'form-check-label mr-2', for: 'flexCheckDefault' %>
         </div>
-        <div class="checkbox-inline col-sm-4">
-          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-          <label class="form-check-label mr-2" for="flexCheckDefault">顔タイプ骨格診断</label>
+        <div class='checkbox-inline col-sm-4'>
+          <%= f.check_box :menu, {class: 'form-check-input'}, id: 'flexCheckDefault', value: 'face_type_skeleton_diagnosis' %>
+          <%= f.label :menu, '顔タイプ骨格診断', class: 'form-check-label mr-2', for: 'flexCheckDefault' %>
         </div>
-        <div class="checkbox-inline col-sm-3 mt-4">
-          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-          <label class="form-check-label mr-2" for="flexCheckDefault">色見本帳購入</label>
+        <div class='checkbox-inline col-sm-3 mt-4'>
+          <%= f.check_box :menu, {class: 'form-check-input'}, id: 'flexCheckDefault', value: 'purchase_color_sample_book' %>
+          <%= f.label :menu, '色見本帳購入', class: 'form-check-label mr-2', for: 'flexCheckDefault' %>
         </div>
-        <div class="checkbox-inline col-sm-5 mt-4">
-          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-          <label class="form-check-label mr-2" for="flexCheckDefault">パーソナルカラー養成講座無料相談</label>
+        <div class='checkbox-inline col-sm-5 mt-4'>
+          <%= f.check_box :menu, {class: 'form-check-input'}, id: 'flexCheckDefault', value: 'free_consultation_for_personal_color_training_course' %>
+          <%= f.label :menu, 'パーソナルカラー養成講座無料相談', class: 'form-check-label mr-2', for: 'flexCheckDefault' %>
         </div>
-        <div class="checkbox-inline col-sm-4 mt-4">
-          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-          <label class="form-check-label mr-2" for="flexCheckDefault">講座・講演依頼</label>
+        <div class='checkbox-inline col-sm-4 mt-4'>
+          <%= f.check_box :menu, {class: 'form-check-input'}, id: 'flexCheckDefault', value: 'lecture_and_lecture_requests' %>
+          <%= f.label :menu, '講座・講演依頼', class: 'form-check-label mr-2', for: 'flexCheckDefault' %>
         </div> 
       </div>
     </div>
   </div>
-  <div class="row mt-5">
-    <label class="col-sm-2 col-form-label">お顔出し割引適用</label>
-    <div class="col-sm-10 text-left pt-2">
-      <div class="row ml-1">
-        <div class="form-check form-check-inline col-sm-3">
-          <input type="radio" class="form-check-input" name="flexRadioDefault" value="option1">
-          <label class="form-check-label">あり(割引料金)</label>
+  <div class='row mt-5'>
+    <%= f.label :discount, 'お顔出し割引適用', class: 'col-sm-2 col-form-label' %>
+    <div class='col-sm-10 text-left pt-2'>
+      <div class='row ml-1'>
+        <div class='form-check form-check-inline col-sm-3'>
+          <%= f.radio_button :discount, 'discounted_rates', class: 'form-check-input', name: 'flexRadioDefault' %>
+          <%= f.label :discount, 'あり(割引料金)', class: 'form-check-label' %>
         </div>
-        <div class="form-check form-check-inline col-sm-3">
-          <input type="radio" class="form-check-input" name="flexRadioDefault" value="option2">
-          <label class="form-check-label">なし(通常料金)</label>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="row mt-5">
-    <label class="col-sm-2 col-form-label">お支払い方法</label>
-    <div class="col-sm-10 text-left pt-2">
-      <div class="row ml-1">
-        <div class="form-check form-check-inline col-sm-2">
-          <input type="radio" class="form-check-input" name="flexRadioDefault" value="option1">
-          <label class="form-check-label">銀行振込</label>
-        </div>
-        <div class="form-check form-check-inline col-sm-3">
-          <input type="radio" class="form-check-input" name="flexRadioDefault" value="option2">
-          <label class="form-check-label">クレジットカード決済</label>
-        </div>
-        <div class="form-check form-check-inline col-sm-2">
-          <input type="radio" class="form-check-input" name="flexRadioDefault" value="option1">
-          <label class="form-check-label">無料相談</label>
-        </div>
-        <div class="form-check form-check-inline col-sm-2">
-          <input type="radio" class="form-check-input" name="flexRadioDefault" value="option2">
-          <label class="form-check-label">その他</label>
+        <div class='form-check form-check-inline col-sm-3'>
+          <%= f.radio_button :discount, 'regular_rate', class: 'form-check-input', name: 'flexRadioDefault' %>
+          <%= f.label :discount, 'なし(通常料金)', class: 'form-check-label' %>
         </div>
       </div>
     </div>
   </div>
-  <div class="row mt-5">
-    <label class="col-sm-2 col-form-label">お問い合わせ内容</label>
-    <div class="col-sm-7">
-      <textarea class="form-control" rows="8"></textarea>
+  <div class='row mt-5'>
+    <%= f.label :payment, 'お支払方法', class: 'col-sm-2 col-form-label' %>
+    <div class='col-sm-10 text-left pt-2'>
+      <div class='row ml-1'>
+        <div class='form-check form-check-inline col-sm-2'>
+          <%= f.radio_button :payment, 'bank_transfer', class: 'form-check-input', name: 'flexRadioDefault' %>
+          <%= f.label :payment, '銀行振込', class: 'form-check-label' %>
+        </div>
+        <div class='form-check form-check-inline col-sm-3'>
+          <%= f.radio_button :payment, 'credit_card', class: 'form-check-input', name: 'flexRadioDefault' %>
+          <%= f.label :payment, 'クレジットカード決済', class: 'form-check-label' %>
+        </div>
+        <div class='form-check form-check-inline col-sm-2'>
+          <%= f.radio_button :payment, 'free_consultation', class: 'form-check-input', name: 'flexRadioDefault' %>
+          <%= f.label :payment, '無料相談', class: 'form-check-label' %>
+        </div>
+        <div class='form-check form-check-inline col-sm-2'>
+          <%= f.radio_button :payment, 'other', class: 'form-check-input', name: 'flexRadioDefault' %>
+          <%= f.label :payment, '無料相談', class: 'form-check-label' %>
+        </div>
+      </div>
     </div>
   </div>
-  <button type="button" class="btn btn-primary btn-lg mt-5">送信</button>
+  <div class='row mt-5'>
+    <%= f.label :content, 'お問い合わせ内容', class: 'col-sm-2 col-form-label' %>
+    <div class='col-sm-7'>
+      <%= f.text_area :content, class: 'form-control', size: '35x15' %>
+    </div>
+  </div>
+  <%= f.submit '確認画面へ', class: 'btn btn-primary btn-lg mt-5'%>
   <% end %>
 </div>
