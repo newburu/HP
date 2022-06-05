@@ -1,0 +1,7 @@
+ja:
+  enumerize:
+    contact:
+      matter:
+        reserve: 'ご予約'
+        inquiry: 'お問い合わせ'
+        other: 'その他'

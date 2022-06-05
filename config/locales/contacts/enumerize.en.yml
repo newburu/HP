@@ -1,0 +1,7 @@
+ja:
+  enumerize:
+    contact:
+      matter:
+        reserve: 'reserve'
+        inquiry: 'inquiry'
+        other: 'other'

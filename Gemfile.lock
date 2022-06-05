@@ -85,6 +85,8 @@ GEM
     childprocess (4.1.0)
     concurrent-ruby (1.1.10)
     crass (1.0.6)
+    enumerize (2.5.0)
+      activesupport (>= 3.2)
     erubi (1.10.0)
     execjs (2.8.1)
     ffi (1.15.5)
@@ -222,6 +224,7 @@ DEPENDENCIES
   bootstrap (~> 4.3.1)
   byebug
   capybara (>= 3.26)
+  enumerize
   jbuilder (~> 2.7)
   jquery-rails
   puma (~> 5.0)
