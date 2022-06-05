@@ -2,12 +2,12 @@
 
 <%= render partial: '/shared/header' %>
 
+<%= form_with model: @contact, url: confirm_contacts_path(@contact) , local: true do |f| %>
 <div class='container-fluid w-50 p-3 text-center' id='content'>
   <div class='mt-2 mb-5 mr-5'>
     <h2 class='display-4'>Contact</h2>
     <span><p class='small'>お問い合わせ</p></span>
   </div>
-  <%= form_with url: 'confirm_contacts_path',local: true do |f| %>
   <form>
     <div class='form-group row'>
       <%= f.label :name, '名前', class: 'col-sm-2 col-form-label' %>
@@ -29,7 +29,7 @@
     </div>
   </form>
   <div class='row mt-5'>
-    <%= f.label :matter, 'ご内容', class: 'col-sm-2 col-form-label' %>
+    <%= f.label :matter, 'ご内容', class: 'col-sm-2 col-form-label'%>
     <div class='col-sm-10 text-left pt-2'>
       <div class='row ml-1'>
         <div class='form-check form-check-inline col-sm-3'>
@@ -37,11 +37,11 @@
           <%= f.label :matter, 'ご予約', class: 'form-check-label' %>
         </div>
         <div class='form-check form-check-inline col-sm-3'>
-          <%= f.radio_button :matter, :inquiry, class: 'form-check-input', name: 'flexRadioDefault' %>
+          <%= f.radio_button :matter, 'inquiry', class: 'form-check-input', name: 'flexRadioDefault' %>
           <%= f.label :matter, 'お問い合わせ', class: 'form-check-label' %>
         </div>
         <div class='form-check form-check-inline col-sm-3'>
-          <%= f.radio_button :matter, :other, class: 'form-check-input', name: 'flexRadioDefault' %>
+          <%= f.radio_button :matter, 'other', class: 'form-check-input', name: 'flexRadioDefault' %>
           <%= f.label :matter, 'その他', class: 'form-check-label' %>
         </div>
       </div>
@@ -83,11 +83,11 @@
     <div class='col-sm-10 text-left pt-2'>
       <div class='row ml-1'>
         <div class='form-check form-check-inline col-sm-3'>
-          <%= f.radio_button :discount, 'discounted_rates', class: 'form-check-input', name: 'flexRadioDefault' %>
+          <%= f.radio_button :discount, 'discounted_rates', class: 'form-check-input', name: 'flexRadioDefault1' %>
           <%= f.label :discount, 'あり(割引料金)', class: 'form-check-label' %>
         </div>
         <div class='form-check form-check-inline col-sm-3'>
-          <%= f.radio_button :discount, 'regular_rate', class: 'form-check-input', name: 'flexRadioDefault' %>
+          <%= f.radio_button :discount, 'regular_rate', class: 'form-check-input', name: 'flexRadioDefault1' %>
           <%= f.label :discount, 'なし(通常料金)', class: 'form-check-label' %>
         </div>
       </div>
@@ -98,19 +98,19 @@
     <div class='col-sm-10 text-left pt-2'>
       <div class='row ml-1'>
         <div class='form-check form-check-inline col-sm-2'>
-          <%= f.radio_button :payment, 'bank_transfer', class: 'form-check-input', name: 'flexRadioDefault' %>
+          <%= f.radio_button :payment, 'bank_transfer', class: 'form-check-input', name: 'flexRadioDefault2' %>
           <%= f.label :payment, '銀行振込', class: 'form-check-label' %>
         </div>
         <div class='form-check form-check-inline col-sm-3'>
-          <%= f.radio_button :payment, 'credit_card', class: 'form-check-input', name: 'flexRadioDefault' %>
+          <%= f.radio_button :payment, 'credit_card', class: 'form-check-input', name: 'flexRadioDefault2' %>
           <%= f.label :payment, 'クレジットカード決済', class: 'form-check-label' %>
         </div>
         <div class='form-check form-check-inline col-sm-2'>
-          <%= f.radio_button :payment, 'free_consultation', class: 'form-check-input', name: 'flexRadioDefault' %>
+          <%= f.radio_button :payment, 'free_consultation', class: 'form-check-input', name: 'flexRadioDefault2' %>
           <%= f.label :payment, '無料相談', class: 'form-check-label' %>
         </div>
         <div class='form-check form-check-inline col-sm-2'>
-          <%= f.radio_button :payment, 'other', class: 'form-check-input', name: 'flexRadioDefault' %>
+          <%= f.radio_button :payment, 'other', class: 'form-check-input', name: 'flexRadioDefault2' %>
           <%= f.label :payment, '無料相談', class: 'form-check-label' %>
         </div>
       </div>
@@ -123,5 +123,5 @@
     </div>
   </div>
   <%= f.submit '確認画面へ', class: 'btn btn-primary btn-lg mt-5'%>
-  <% end %>
 </div>
+<% end %>
