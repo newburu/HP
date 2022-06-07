@@ -3,7 +3,7 @@ class Contact < ApplicationRecord
   extend Enumerize
   enumerize :matter, in: %w(reserve inquiry other)
   enumerize :menu, in: %w(total_course personal_color_analysis face_type_skeleton_diagnosis purchase_color_sample_book
-                          free_consultation_for_personal_color_training_course lecture_and_lecture_requests), multiple: true
+                          free_consultation_for_personal_color_training_course lecture_and_lecture_requests)
   enumerize :discount, in: %w(discounted_rates regular_rate)
 
 
