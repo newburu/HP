@@ -39,4 +39,10 @@ class Contact < ApplicationRecord
 
   validates :content,               presence: true,
                                     length: {maximum:65535}
+
+
+  # インスタンスメソッド
+  def start_time
+    self.start_at
+  end
 end
