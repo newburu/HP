@@ -1,1 +1,65 @@
 <% provide(:title, 'お問い合わせ|確認') %>
+
+<div class='container-fluid text-center w-75' id='content'>
+  <div class='mt-2 mb-5 mr-5'>
+    <h2 class='display-4'>お問い合わせ確認</h2>
+  </div>
+  <form>
+    <div class='form-group row'>
+      <label class='col-sm-2 col-form-label'>名前</label>
+      <div class='col-sm-10'>
+        <div class='form-control form-control-lg col-sm-8'>
+          <%= @contact.name %>
+        </div>
+      </div>
+    </div>
+    <div class='form-group row mt-5'>
+      <label class='col-sm-2 col-form-label'>ふりがな</label>
+      <div class='col-sm-10'>
+        <div class='form-control form-control-lg col-sm-8'>
+          <%= @contact.name_hiragana %>
+        </div>
+      </div>
+    </div>
+    <div class='form-group row mt-5'>
+      <label class='col-sm-2 col-form-label'>メールアドレス</label>
+      <div class='col-sm-10'>
+        <div class='form-control form-control-lg col-sm-8'>
+          <%= @contact.email %>
+        </div>
+      </div>
+    </div>
+    <div class='form-group row mt-5'>
+      <label class='col-sm-2 col-form-label'>ご内容</label>
+      <div class='col-sm-10'>
+        <div class='form-control form-control-lg col-sm-8'>
+          <%= @contact.matter_text %>
+        </div>
+      </div>
+    </div>
+    <div class='form-group row mt-5'>
+      <label class='col-sm-2 col-form-label'>ご希望のメニュー</label>
+      <div class='col-sm-10'>
+        <div class='form-control form-control-lg col-sm-8'>
+          <%= @contact.menu %>
+        </div>
+      </div>
+    </div>
+    <div class='form-group row mt-5'>
+      <label class='col-sm-2 col-form-label'>お支払方法</label>
+      <div class='col-sm-10'>
+        <div class='form-control form-control-lg col-sm-8'>
+          <%= @contact.payment %>
+        </div>
+      </div>
+    </div>
+    <div class='row mt-5'>
+      <label class='col-sm-2 col-form-label'>お問い合わせ内容</label>
+      <div class='col-sm-7'>
+        <textarea class='form-control' rows='10'>
+          <%= @contact.content %>
+        </textarea>
+      </div>
+    </div>
+  </form>
+</div>
