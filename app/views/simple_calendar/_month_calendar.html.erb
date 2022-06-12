@@ -1,8 +1,8 @@
 <div class="simple-calendar">
   <div class="calendar-heading">
-    <%= link_to t('simple_calendar.previous', default: '←'), calendar.url_for_previous_view, remote: true %>
+    <%= link_to t('simple_calendar.previous', default: '先月'), calendar.url_for_previous_view, remote: true %>
     <span class="calendar-title"><%= start_date.year %></span>
-    <%= link_to t('simple_calendar.next', default: '→'), calendar.url_for_next_view, remote: true %>
+    <%= link_to t('simple_calendar.next', default: '翌月'), calendar.url_for_next_view, remote: true %>
   </div>
 
   <table class="table table-striped">
@@ -19,9 +19,7 @@
         <tr>
           <% week.each do |day| %>
             <%= content_tag :td, class: calendar.td_classes_for(day) do %>
-              <% if defined?(Haml) && respond_to?(:block_is_haml?) && block_is_haml?(passed_block) %>
-                <% capture_haml(day.strftime("%m/%d"), sorted_events.fetch(day, []), &passed_block) %>
-              <% else %>
+              <%= link_to "", "data-toggle" => "modal", "data-target" => "#events_calendar" do %> 
                 <% passed_block.call day.strftime("%m/%d"), sorted_events.fetch(day, []) %>
               <% end %>
             <% end %>
