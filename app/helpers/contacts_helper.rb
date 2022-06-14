@@ -10,4 +10,17 @@ module ContactsHelper
   def events_ajax_next_link
     ->(param, date_range) { link_to raw("&raquo;"), {param => date_range.last + 1.day}, remote: :true}
   end
+
+  def check_reservation(reservations, day, time)
+    result = false
+    reservation_count = reservations.count
+    if reservation_count > 1
+      reservations.each do |reservation|
+        result = reservation[:day].eql?(day.strftime("%Y-%m-%d")) && reservation[:time].eql?(time)
+      end
+    elsif reservation_count == 1
+      result = reservations[0][:day].eql?(day.strftime("%Y-%m-%d")) && reservations[0][:time].eql?(time)
+    end
+    return result
+  end
 end

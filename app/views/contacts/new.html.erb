@@ -117,19 +117,11 @@
     </div>
   </div>
   <div class='row mt-5'>
-    <%= f.label :start_time, '面談希望日', class: 'col-sm-2 form-check-label' %>
-    <div class='col-sm-7' id='calendar'>
-      <%= render partial: "calendar", locals: {events: @contacts} %>
-    </div>
-  </div>
-  <div class='row mt-5'>
     <%= f.label :content, 'お問い合わせ内容', class: 'col-sm-2 col-form-label' %>
     <div class='col-sm-7'>
       <%= f.text_area :content, class: 'form-control', size: '35x15' %>
     </div>
   </div>
-  <%= f.submit '確認画面へ', class: 'btn btn-primary btn-lg mt-5'%>
+  <%= link_to '面談予約日確認画面へ', calendar_contacts_path, {class: 'btn btn-primary btn-lg mt-5'} %>
 </div>
 <% end %>
-
-<%= render "calendar_modal" %>

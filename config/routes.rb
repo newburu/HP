@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :articles
   resources :profiles, :only => :index
   resource :contacts, :only => [:new, :create] do
+    get 'calendar', to: 'contacts#calendar', as: 'calendar'
     post 'confirm', to: 'contacts#confirm', as: 'confirm'
     get 'finish', to: 'contacts#finish', as: 'finish'
   end

@@ -1,7 +1,12 @@
 class ContactsController < ApplicationController
   def new
     @contact = Contact.new
+  end
+  
+  def calendar
     @contacts = Contact.all.where('day >= ?', Date.current).where("day < ?", Date.current >> 3).order(day: :desc)
+    @day = params[:day]
+    @time = params[:time]
   end
 
   def confirm

@@ -19,7 +19,7 @@
         <tr>
           <% week.each do |day| %>
             <%= content_tag :td, class: calendar.td_classes_for(day) do %>
-              <%= link_to "", "data-toggle" => "modal", "data-target" => "#events_calendar" do %> 
+              <%= link_to "", "data-toggle" => "modal", "data-target" => "#events_calendars" do %> 
                 <% passed_block.call day.strftime("%m/%d"), sorted_events.fetch(day, []) %>
               <% end %>
             <% end %>
