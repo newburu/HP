@@ -12,7 +12,11 @@ class Contact < ApplicationRecord
   MATTER_VALUES = %w(reserve inquiry other)
   MENU_VALUES = %w(total_course personal_color_analysis face_type_skeleton_diagnosis purchase_color_sample_book
                    free_consultation_for_personal_color_training_course lecture_and_lecture_requests)
-  
+
+
+  # アソシエーション
+  belongs_to :reservation
+
 
   # バリデーション
   validates :name,                  presence: true,

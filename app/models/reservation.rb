@@ -1,4 +1,7 @@
 class Reservation < ApplicationRecord
+  # アソシエーション
+  has_many :contacts
+
 
   # クラスメソッド
   def self.reservation
