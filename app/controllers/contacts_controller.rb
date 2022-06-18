@@ -4,11 +4,13 @@ class ContactsController < ApplicationController
   end
   
   def calendar
-    @contacts = Contact.all.where('day >= ?', Date.current).where("day < ?", Date.current >> 3).order(day: :desc)
+    @reservations = Reservation.all.where("day >= ?", Date.current).where("day < ?", Date.current >> 3).order(day: :desc)
+  end
+
+  def reservation
     @day = params[:day]
     @time = params[:time]
   end
-
   def confirm
     @contact = Contact.new(contact_params)
     render :new if @contact.invalid?

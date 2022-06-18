@@ -1,5 +1,5 @@
 <% provide(:title, 'お問い合わせ | 面談予約') %>
 
-<%= week_calendar(number_of_weeks: 1, events: @contacts, previous_link: events_ajax_previous_link, next_link: events_ajax_next_link) do |date, contacts| %>
+<%= week_calendar(number_of_weeks: 1, events: @reservations, previous_link: events_ajax_previous_link, next_link: events_ajax_next_link) do |date, reservations| %>
   <%= date %>
 <% end %>

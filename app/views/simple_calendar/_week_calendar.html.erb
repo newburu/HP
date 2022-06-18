@@ -1,49 +1,63 @@
-<% reservations = Contact.reservation %>
-
-<div>
-  <div class="calendar-heading">
-    <%= link_to t('simple_calendar.previous', default: '先週'), calendar.url_for_previous_view, remote: true %>
-      <span class="calendar-title"></span>
-    <%= link_to t('simple_calendar.next', default: '来週'), calendar.url_for_next_view, remote: true %>
-  </div>
-
-  <table class="table">
-    <thead>
+<% reservations = Reservation.reservation %>
+<div class="calendar-heading">
+  <%= link_to t('simple_calendar.previous', default: '前週'), calendar.url_for_previous_view %>
+  <% if calendar.number_of_weeks == 1 %>
+    <span class="calendar-title"><%= t('simple_calendar.week', default: '1週間') %></span>
+  <% else %>
+    <span class="calendar-title"><%= t('simple_calendar.week', default: '1週間') %></span>
+  <% end %>
+  <%= link_to t('simple_calendar.next', default: '翌週'), calendar.url_for_next_view %>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>時間</th>
+      <% date_range.slice(0, 7).each do |day| %>
+        <th><%= t('date.abbr_day_names')[day.wday] %></th>
+      <% end %>
+    </tr>
+  </thead>
+  <tbody>
+    <% date_range.each_slice(7) do |week| %>
       <tr>
-        <th></th>
-        <% date_range.slice(0, 7).each do |day| %>
-          <th><%= t('date.abbr_day_names')[day.wday] %></th>
+        <td></td>
+        <% week.each do |day| %>
+          <%= content_tag :td, class: calendar.td_classes_for(day) do %>
+            <% passed_block.call day.strftime("%-m/%d"), sorted_events.fetch(day, []) %>
+          <% end %>
         <% end %>
       </tr>
-    </thead>
-
-    <tbody>
-      <% date_range.each_slice(7) do |week| %>
+      <% times.each do |time| %>
         <tr>
-          <td></td>
+          <td><%= time %></td>
           <% week.each do |day| %>
-            <%= content_tag :td, class: calendar.td_classes_for(day) do %>
-              <% passed_block.call day.strftime("%-m/%d"), sorted_events.fetch(day, []) %>
-            <% end %>
+            <td>
+              <% if check_reservation(reservations, day, time) %>
+                <%= '×' %>
+              <% else %>
+                <%= link_to  reservation_contacts_path(day: day, time: time) do %> 
+                  <%= '〇' %>
+                <% end %>
+              <% end %>
+            </td>
           <% end %>
         </tr>
-        <% times.each do |time| %>
-          <tr>
-            <td><%= time %></td>
-            <% week.each do |day| %>
-              <td>
-                <% if check_reservation(reservations, day, time)%>
-                  <%= '×' %>
-                <% else %>
-                  <%= link_to "", "data-toggle" => "modal", "data-target" => "#calendar" do %> 
-                    <%= '〇' %>
-                  <% end %>
-                <% end %>
-              </td>
-            <% end %>
-          </tr>
-        <% end %>
       <% end %>
-    </tbody>
-  </table>
-</div>
+    <% end %>
+  </tbody>
+</table>
+
+<script>
+// $('#events_calendar').on('show.bs.modal', function(event){
+//   var button = $(event.relatedTarget);
+//   var sampledata = button.data('sample');
+//   var modal = $(this);
+//     modal.find('.modal-title').val(sampledata);
+// })
+
+  // var events_calendar = document.getElementById('events_calendar')
+  // events_calendar.addEventListener('show.bs.modal', function (event) {
+  //   var circle = event.relatedTarget
+  // })
+
+</script>
