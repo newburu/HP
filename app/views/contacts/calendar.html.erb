@@ -3,3 +3,12 @@
 <%= week_calendar(number_of_weeks: 1, events: @reservations, previous_link: events_ajax_previous_link, next_link: events_ajax_next_link) do |date, reservations| %>
   <%= date %>
 <% end %>
+
+<%= hidden_field_tag :name,           @contact.name %>
+<%= hidden_field_tag :name_hiragana,  @contact.name_hiragana %>
+<%= hidden_field_tag :email,          @contact.email %>
+<%= hidden_field_tag :matter,         @contact.matter %>
+<%= hidden_field_tag :menu,           @contact.menu %>
+<%= hidden_field_tag :discount,       @contact.discount %>
+<%= hidden_field_tag :payment,        @contact.payment %>
+<%= hidden_field_tag :content,        @contact.content %>

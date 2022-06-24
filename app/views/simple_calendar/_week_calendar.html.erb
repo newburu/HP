@@ -35,7 +35,7 @@
               <% if check_reservation(reservations, day, time) %>
                 <%= '×' %>
               <% else %>
-                <%= link_to  reservation_contacts_path(day: day, time: time) do %> 
+                <%= link_to reservation_contacts_path(day: day, time: time) do %> 
                   <%= '〇' %>
                 <% end %>
               <% end %>
@@ -46,18 +46,3 @@
     <% end %>
   </tbody>
 </table>
-
-<script>
-// $('#events_calendar').on('show.bs.modal', function(event){
-//   var button = $(event.relatedTarget);
-//   var sampledata = button.data('sample');
-//   var modal = $(this);
-//     modal.find('.modal-title').val(sampledata);
-// })
-
-  // var events_calendar = document.getElementById('events_calendar')
-  // events_calendar.addEventListener('show.bs.modal', function (event) {
-  //   var circle = event.relatedTarget
-  // })
-
-</script>
