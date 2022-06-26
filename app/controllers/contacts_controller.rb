@@ -39,6 +39,6 @@ class ContactsController < ApplicationController
   private
 
   def reservation_params
-    params.require(:reservation).permit(:day, :time, :start_time)
+    params.permit(:day, :time, :start_time)
   end
 end

@@ -1,5 +1,6 @@
 <% reservations = Reservation.reservation %>
-<div class="calendar-heading">
+<div class="calendar-heading text-center m-4">
+  <h2 class='m-5'>以下のカレンダーから面談希望日を選択してください</h2>
   <%= link_to t('simple_calendar.previous', default: '前週'), calendar.url_for_previous_view %>
   <% if calendar.number_of_weeks == 1 %>
     <span class="calendar-title"><%= t('simple_calendar.week', default: '1週間') %></span>
@@ -12,8 +13,14 @@
   <thead>
     <tr>
       <th>時間</th>
-      <% date_range.slice(0, 7).each do |day| %>
-        <th><%= t('date.abbr_day_names')[day.wday] %></th>
+      <% date_range.slice(0, 7).each_with_index do |day, i| %>
+        <% if i == 0 %>
+          <th class='text-danger'><%= t('date.abbr_day_names')[day.wday] %></th>
+        <% elsif i == 6%>
+          <th class='text-primary'><%= t('date.abbr_day_names')[day.wday] %></th>
+        <% else %>
+          <th><%= t('date.abbr_day_names')[day.wday] %></th>
+        <% end %>
       <% end %>
     </tr>
   </thead>
@@ -46,3 +53,11 @@
     <% end %>
   </tbody>
 </table>
+<div class='text-center'>
+  <%= form_with model: @reservation, url: confirm_contacts_path, local: true do |f| %>
+    <%= f.hidden_field :day %>
+    <%= f.hidden_field :time %>
+    <%= f.hidden_field :start_time %>
+    <%= f.submit value: '面談希望しない方はこちらを選択してください', class: 'btn btn-primary mx-auto d-block' %>
+  <% end %>
+</div>

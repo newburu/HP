@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :articles
   resources :profiles, :only => :index
   resource :contacts, :only => [:new, :create] do
-    post 'calendar'
+    match 'calendar', to: 'contacts#calendar', as: 'calendar', via: [:get, :post]
     get 'reservation'
     post 'confirm'
   end

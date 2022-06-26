@@ -33,15 +33,15 @@
     <div class='col-sm-10 text-left pt-2'>
       <div class='row ml-1'>
         <div class='form-check form-check-inline col-sm-3'>
-          <%= f.radio_button :matter, :reserve, class: 'form-check-input' %>
+          <%= f.radio_button :matter, :ご予約, class: 'form-check-input' %>
           <%= f.label :matter, 'ご予約', class: 'form-check-label' %>
         </div>
         <div class='form-check form-check-inline col-sm-3'>
-          <%= f.radio_button :matter, :inquiry, class: 'form-check-input' %>
+          <%= f.radio_button :matter, :お問い合わせ, class: 'form-check-input' %>
           <%= f.label :matter, 'お問い合わせ', class: 'form-check-label' %>
         </div>
         <div class='form-check form-check-inline col-sm-3'>
-          <%= f.radio_button :matter, :other, class: 'form-check-input' %>
+          <%= f.radio_button :matter, :その他, class: 'form-check-input' %>
           <%= f.label :matter, 'その他', class: 'form-check-label' %>
         </div>
       </div>
@@ -52,27 +52,27 @@
     <div class='col-sm-9 text-left pt-2 ml-1'>
       <div class='form-check form-check-inline row'>
         <div class='checkbox-inline col-sm-3'>
-          <%= f.radio_button :menu, :total_course, class: 'form-check-input' %>
+          <%= f.radio_button :menu, :トータルコース, class: 'form-check-input' %>
           <%= f.label :menu, 'トータルコース', class: 'form-check-label mr-2' %>
         </div>
         <div class='checkbox-inline col-sm-4'>
-          <%= f.radio_button :menu, :personal_color_analysis, class: 'form-check-input' %>
+          <%= f.radio_button :menu, :パーソナルカラー診断, class: 'form-check-input' %>
           <%= f.label :menu, 'パーソナルカラー診断', class: 'form-check-label mr-2' %>
         </div>
         <div class='checkbox-inline col-sm-4'>
-          <%= f.radio_button :menu, :face_type_skeleton_diagnosis, class: 'form-check-input' %>
+          <%= f.radio_button :menu, :顔タイプ骨格診断, class: 'form-check-input' %>
           <%= f.label :menu, '顔タイプ骨格診断', class: 'form-check-label mr-2' %>
         </div>
         <div class='checkbox-inline col-sm-3 mt-4'>
-          <%= f.radio_button :menu, :purchase_color_sample_book, class: 'form-check-input' %>
+          <%= f.radio_button :menu, :色見本帳購入, class: 'form-check-input' %>
           <%= f.label :menu, '色見本帳購入', class: 'form-check-label mr-2' %>
         </div>
         <div class='checkbox-inline col-sm-5 mt-4'>
-          <%= f.radio_button :menu, :free_consultation_for_personal_color_training_course, class: 'form-check-input' %>
+          <%= f.radio_button :menu, :パーソナルカラー養成講座無料相談, class: 'form-check-input' %>
           <%= f.label :menu, 'パーソナルカラー養成講座無料相談', class: 'form-check-label mr-2' %>
         </div>
         <div class='checkbox-inline col-sm-4 mt-4'>
-          <%= f.radio_button :menu, :lecture_and_lecture_requests, class: 'form-check-input' %>
+          <%= f.radio_button :menu, :講座・講演依頼, class: 'form-check-input' %>
           <%= f.label :menu, '講座・講演依頼', class: 'form-check-label mr-2' %>
         </div> 
       </div>
@@ -83,11 +83,11 @@
     <div class='col-sm-10 text-left pt-2'>
       <div class='row ml-1'>
         <div class='form-check form-check-inline col-sm-3'>
-          <%= f.radio_button :discount, :discounted_rates, class: 'form-check-input' %>
+          <%= f.radio_button :discount, :割引料金, class: 'form-check-input' %>
           <%= f.label :discount, 'あり(割引料金)', class: 'form-check-label' %>
         </div>
         <div class='form-check form-check-inline col-sm-3'>
-          <%= f.radio_button :discount, :regular_rate, class: 'form-check-input' %>
+          <%= f.radio_button :discount, :通常料金, class: 'form-check-input' %>
           <%= f.label :discount, 'なし(通常料金)', class: 'form-check-label' %>
         </div>
       </div>
@@ -98,20 +98,20 @@
     <div class='col-sm-10 text-left pt-2'>
       <div class='row ml-1'>
         <div class='form-check form-check-inline col-sm-2'>
-          <%= f.radio_button :payment, :bank_transfer, class: 'form-check-input' %>
+          <%= f.radio_button :payment, :銀行振込, class: 'form-check-input' %>
           <%= f.label :payment, '銀行振込', class: 'form-check-label' %>
         </div>
         <div class='form-check form-check-inline col-sm-3'>
-          <%= f.radio_button :payment, :credit_card, class: 'form-check-input' %>
+          <%= f.radio_button :payment, :クレジットカード決済, class: 'form-check-input' %>
           <%= f.label :payment, 'クレジットカード決済', class: 'form-check-label' %>
         </div>
         <div class='form-check form-check-inline col-sm-2'>
-          <%= f.radio_button :payment, :free_consultation, class: 'form-check-input' %>
+          <%= f.radio_button :payment, :無料相談, class: 'form-check-input' %>
           <%= f.label :payment, '無料相談', class: 'form-check-label' %>
         </div>
         <div class='form-check form-check-inline col-sm-2'>
-          <%= f.radio_button :payment, :other, class: 'form-check-input' %>
-          <%= f.label :payment, '無料相談', class: 'form-check-label' %>
+          <%= f.radio_button :payment, :その他, class: 'form-check-input' %>
+          <%= f.label :payment, 'その他', class: 'form-check-label' %>
         </div>
       </div>
     </div>

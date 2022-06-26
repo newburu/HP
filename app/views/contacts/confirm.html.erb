@@ -59,7 +59,11 @@
       <label class='col-sm-2 col-form-label'>面談希望日</label>
       <div class='col-sm-10'>
         <div class='form-control form-control-lg col-sm-8'>
-          <%=  @reservation.day %> + <%=  @reservation.time %>
+          <% if @reservation.day.nil? || @reservation.time.nil? %>
+            <span>なし</span>
+          <% else %>
+            <%=  @reservation.day %> + <%=  @reservation.time %>
+          <% end %>
         </div>
       </div>
     </div>
