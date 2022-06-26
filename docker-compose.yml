@@ -27,3 +27,5 @@ services:
     # コンテナの3000ポートとlocalhostの3000ポートをマッピング
     ports:
       - "3000:3000"
+    stdin_open: true
+    tty: true

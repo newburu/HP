@@ -1,4 +1,6 @@
-<% provide(:title, 'お問い合わせ|確認') %>
+<% provide(:title, 'お問い合わせ | 確認') %>
+
+<%= render partial: '/shared/header' %>
 
 <div class='container-fluid text-center w-75' id='content'>
   <div class='mt-2 mb-5 mr-5'>
@@ -9,7 +11,7 @@
       <label class='col-sm-2 col-form-label'>名前</label>
       <div class='col-sm-10'>
         <div class='form-control form-control-lg col-sm-8'>
-          <%= @contact.name %>
+          <%= session[:name] %> 
         </div>
       </div>
     </div>
@@ -17,7 +19,7 @@
       <label class='col-sm-2 col-form-label'>ふりがな</label>
       <div class='col-sm-10'>
         <div class='form-control form-control-lg col-sm-8'>
-          <%= @contact.name_hiragana %>
+          <%= session[:name_hiragana] %>
         </div>
       </div>
     </div>
@@ -25,7 +27,7 @@
       <label class='col-sm-2 col-form-label'>メールアドレス</label>
       <div class='col-sm-10'>
         <div class='form-control form-control-lg col-sm-8'>
-          <%= @contact.email %>
+          <%= session[:email] %>
         </div>
       </div>
     </div>
@@ -33,7 +35,7 @@
       <label class='col-sm-2 col-form-label'>ご内容</label>
       <div class='col-sm-10'>
         <div class='form-control form-control-lg col-sm-8'>
-          <%= @contact.matter_text %>
+          <%= session[:matter] %>
         </div>
       </div>
     </div>
@@ -41,7 +43,7 @@
       <label class='col-sm-2 col-form-label'>ご希望のメニュー</label>
       <div class='col-sm-10'>
         <div class='form-control form-control-lg col-sm-8'>
-          <%= @contact.menu %>
+          <%= session[:menu] %>
         </div>
       </div>
     </div>
@@ -49,7 +51,15 @@
       <label class='col-sm-2 col-form-label'>お支払方法</label>
       <div class='col-sm-10'>
         <div class='form-control form-control-lg col-sm-8'>
-          <%= @contact.payment %>
+          <%= session[:payment] %>
+        </div>
+      </div>
+    </div>
+    <div class='form-group row mt-5'>
+      <label class='col-sm-2 col-form-label'>面談希望日</label>
+      <div class='col-sm-10'>
+        <div class='form-control form-control-lg col-sm-8'>
+          <%=  @reservation.day %> + <%=  @reservation.time %>
         </div>
       </div>
     </div>
@@ -57,7 +67,7 @@
       <label class='col-sm-2 col-form-label'>お問い合わせ内容</label>
       <div class='col-sm-7'>
         <textarea class='form-control' rows='10'>
-          <%= @contact.content %>
+          <%= session[:content] %>
         </textarea>
       </div>
     </div>
