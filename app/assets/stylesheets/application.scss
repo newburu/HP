@@ -16,3 +16,10 @@
  */
 @import "bootstrap";
 @import "simple_calendar";
+
+.field_with_errors {
+  display: contents;
+  input {
+    @extend .is-invalid;
+  }
+}
