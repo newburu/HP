@@ -7,5 +7,6 @@ Rails.application.routes.draw do
     match 'calendar', to: 'contacts#calendar', as: 'calendar', via: [:get, :post]
     get 'reservation'
     post 'confirm'
+    get 'finish'
   end
 end

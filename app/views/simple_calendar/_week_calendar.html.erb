@@ -30,7 +30,7 @@
         <td></td>
         <% week.each do |day| %>
           <%= content_tag :td, class: calendar.td_classes_for(day) do %>
-            <% passed_block.call day.strftime("%-m/%d"), sorted_events.fetch(day, []) %>
+            <% passed_block.call day.strftime("%-m/%-d"), sorted_events.fetch(day, []) %>
           <% end %>
         <% end %>
       </tr>
@@ -39,7 +39,7 @@
           <td><%= time %></td>
           <% week.each do |day| %>
             <td>
-              <% if check_reservation(reservations, day, time) %>
+              <% if check_reservation(reservations, day, time) || Date.today > day %>
                 <%= '×' %>
               <% else %>
                 <%= link_to reservation_contacts_path(day: day, time: time) do %> 

@@ -6,7 +6,7 @@ class ContactsController < ApplicationController
   def calendar
     @contact = Contact.new(contact_params)
     render 'new' if @contact.invalid?
-    @reservations = Reservation.all.where("day >= ?", Date.current).where("day < ?", Date.current >> 3).order(day: :desc)
+    @reservations = Reservation.all.where('day >= ?', Date.current)
     session[:name] = params[:contact][:name]
     session[:name_hiragana] = params[:contact][:name_hiragana]
     session[:email] = params[:contact][:email]
@@ -32,6 +32,16 @@ class ContactsController < ApplicationController
     session[:discount]
     session[:payment]
     session[:content]
+  end
+
+  def create
+    @contact = Contact.new(contact_params)
+    if @contact.save
+      redirect_to finish_contacts_path
+    end
+  end
+
+  def finish
   end
 
   private
