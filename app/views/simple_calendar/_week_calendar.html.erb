@@ -39,7 +39,7 @@
           <td><%= time %></td>
           <% week.each do |day| %>
             <td>
-              <% if check_reservation(reservations, day, time) || Date.today > day %>
+              <% if check_reservation(reservations, day, time) || Date.today >= day || Time.current >= time %>
                 <%= '×' %>
               <% else %>
                 <%= link_to reservation_contacts_path(day: day, time: time) do %> 
@@ -57,7 +57,6 @@
   <%= form_with model: @reservation, url: confirm_contacts_path, local: true do |f| %>
     <%= f.hidden_field :day %>
     <%= f.hidden_field :time %>
-    <%= f.hidden_field :start_time %>
     <%= f.submit value: '面談希望しない方はこちらを選択してください', class: 'btn btn-primary mx-auto d-block' %>
   <% end %>
 </div>

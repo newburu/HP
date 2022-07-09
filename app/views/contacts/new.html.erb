@@ -17,6 +17,11 @@
       </ul>
     </div>
   <% end %>
+  <% if flash[:alert] %>
+    <div class="alert alert-danger">
+      <%= flash[:alert] %>
+    </div>
+  <% end %>
   <form>
     <div class='form-group row'>
       <div class='col-sm-2 col-form-label'>
@@ -73,7 +78,7 @@
   <div class='row mt-5'>
     <%= f.label :payment, 'お支払方法', class: 'col-sm-2 col-form-label' %>
     <div class='form-select form-select-lg mb-2 col-sm-7'>
-      <%= f.select :discount, {'銀行振込': '銀行振込', 'クレジットカード決済': 'クレジットカード決済', '無料相談': '無料相談', 'その他': 'その他'}, { include_blank: '選択してください'}, { class: 'form-control' } %>
+      <%= f.select :payment, {'銀行振込': '銀行振込', 'クレジットカード決済': 'クレジットカード決済', '無料相談': '無料相談', 'その他': 'その他'}, { include_blank: '選択してください'}, { class: 'form-control' } %>
     </div>
   </div>
   <div class='row mt-5'>

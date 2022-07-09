@@ -1,5 +1,9 @@
 ja:
   activerecord:
+    models:
+      contact: 'お知らせ'
+      reservation: '予約'
+
     attributes:
       contact:
         name: '名前'

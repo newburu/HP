@@ -2,76 +2,77 @@
 
 <%= render partial: '/shared/header' %>
 
+<%= form_with(model: @contact, url: contacts_path, local: true) do |f| %>
 <div class='container-fluid text-center w-75' id='content'>
   <div class='mt-2 mb-5 mr-5'>
     <h2 class='display-4'>お問い合わせ確認</h2>
   </div>
   <form>
     <div class='form-group row'>
-      <label class='col-sm-2 col-form-label'>名前</label>
+      <%= f.label :name, class: 'col-sm-2 col-form-label' %>
       <div class='col-sm-10'>
-        <div class='form-control form-control-lg col-sm-8'>
-          <%= session[:name] %> 
-        </div>
+        <%= f.text_field :name, class: 'form-control form-control-lg col-sm-8 text-center', readonly: true %>
       </div>
     </div>
     <div class='form-group row mt-5'>
-      <label class='col-sm-2 col-form-label'>ふりがな</label>
+      <%= f.label :name_hiragana, class: 'col-sm-2 col-form-label' %>
       <div class='col-sm-10'>
-        <div class='form-control form-control-lg col-sm-8'>
-          <%= session[:name_hiragana] %>
-        </div>
+        <%= f.text_field :name_hiragana, class: 'form-control form-control-lg col-sm-8 text-center', readonly: true %>
       </div>
     </div>
     <div class='form-group row mt-5'>
-      <label class='col-sm-2 col-form-label'>メールアドレス</label>
+      <%= f.label :email, class: 'col-sm-2 col-form-label' %>
       <div class='col-sm-10'>
-        <div class='form-control form-control-lg col-sm-8'>
-          <%= session[:email] %>
-        </div>
+        <%= f.text_field :email, class: 'form-control form-control-lg col-sm-8 text-center', readonly: true %>
       </div>
     </div>
     <div class='form-group row mt-5'>
-      <label class='col-sm-2 col-form-label'>ご内容</label>
+      <%= f.label :matter, class: 'col-sm-2 col-form-label' %>
       <div class='col-sm-10'>
-        <div class='form-control form-control-lg col-sm-8'>
-          <%= session[:matter] %>
-        </div>
+        <%= f.text_field :matter, class: 'form-control form-control-lg col-sm-8 text-center', readonly: true %>
       </div>
     </div>
     <div class='form-group row mt-5'>
-      <label class='col-sm-2 col-form-label'>ご希望のメニュー</label>
+      <%= f.label :menu, class: 'col-sm-2 col-form-label' %>
       <div class='col-sm-10'>
-        <div class='form-control form-control-lg col-sm-8'>
-          <%= session[:menu] %>
-        </div>
+        <%= f.text_field :menu, class: 'form-control form-control-lg col-sm-8 text-center', readonly: true %>
       </div>
     </div>
     <div class='form-group row mt-5'>
-      <label class='col-sm-2 col-form-label'>お支払方法</label>
+      <%= f.label :payment, class: 'col-sm-2 col-form-label' %>
       <div class='col-sm-10'>
-        <div class='form-control form-control-lg col-sm-8'>
-          <%= session[:payment] %>
-        </div>
+        <%= f.text_field :payment, class: 'form-control form-control-lg col-sm-8 text-center', readonly: true %>
       </div>
     </div>
-    <div class='form-group row mt-5'>
-      <label class='col-sm-2 col-form-label'>面談希望日</label>
-      <div class='col-sm-10'>
-        <div class='form-control form-control-lg col-sm-8'>
-          <% if @reservation.day.nil? || @reservation.time.nil? %>
-            <span>なし</span>
+    <%= f.fields_for :reservation do |reservation| %>
+      <div class='form-group row mt-5'>
+      <%= f.label :payment, class: 'col-sm-2 col-form-label' %>
+        <div class='col-sm-10'>
+          <% if @reservation.day.nil? %>
+            <%= reservation.text_field :day, class: 'form-control form-control-lg col-sm-8 text-center', value: 'なし', readonly: true %>
           <% else %>
-            <%=  @reservation.day %> + <%=  @reservation.time %>
+            <%= reservation.text_field :day, class: 'form-control form-control-lg col-sm-8 text-center', value: @reservation.day, readonly: true %>
           <% end %>
         </div>
       </div>
-    </div>
+      <div class='form-group row mt-5'>
+      <%= f.label :time, class: 'col-sm-2 col-form-label' %>
+        <div class='col-sm-10'>
+          <% if @reservation.time.nil? %>
+            <%= reservation.text_field :time, class: 'form-control form-control-lg col-sm-8 text-center', value: 'なし', readonly: true %>
+          <% else %>
+            <%= reservation.text_field :time, class: 'form-control form-control-lg col-sm-8 text-center', value: @reservation.time, readonly: true %>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
     <div class='row mt-5'>
-      <label class='col-sm-2 col-form-label'>お問い合わせ内容</label>
+      <%= f.label :content, class: 'col-sm-2 col-form-label' %>
       <div class='col-sm-7'>
-        <textarea class='form-control' rows='10'><%= session[:content] %></textarea>
+        <%= f.text_area :content, class: 'form-control', rows: '10', readonly: true%>
       </div>
     </div>
   </form>
+  <%= f.submit value: '送信', class: 'btn btn-primary btn-lg mt-5' %>
 </div>
+<% end %>

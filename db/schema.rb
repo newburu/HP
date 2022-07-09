@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_06_18_074331) do
+ActiveRecord::Schema.define(version: 2022_06_14_012906) do
 
   create_table "articles", force: :cascade do |t|
     t.string "title"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 2022_06_18_074331) do
   end
 
   create_table "contacts", force: :cascade do |t|
+    t.integer "reservation_id"
     t.string "name", null: false
     t.string "name_hiragana", null: false
     t.string "email", null: false
@@ -30,9 +31,7 @@ ActiveRecord::Schema.define(version: 2022_06_18_074331) do
     t.text "content", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.datetime "start_time"
-    t.date "day"
-    t.string "time"
+    t.index ["reservation_id"], name: "index_contacts_on_reservation_id"
   end
 
   create_table "profiles", force: :cascade do |t|
@@ -41,12 +40,12 @@ ActiveRecord::Schema.define(version: 2022_06_18_074331) do
   end
 
   create_table "reservations", force: :cascade do |t|
-    t.integer "contact_id"
-    t.date "day", null: false
-    t.string "time", null: false
-    t.datetime "start_time", null: false
+    t.date "day"
+    t.string "time"
+    t.datetime "start_time"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "contacts", "reservations"
 end

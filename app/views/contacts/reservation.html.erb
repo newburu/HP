@@ -17,7 +17,6 @@
         <%= f.label :time, '時間' %>
         <%= f.text_field :time, class: 'form-control text-center p-3', value: @time, readonly: true %>
       </div>
-      <%= f.hidden_field :start_time, value: @start_time %>
       <div class="submit">
         <%= f.submit value: '予約する', class: 'btn btn-primary mx-auto d-block' %>
       </div>

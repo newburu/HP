@@ -1,11 +1,12 @@
 class Reservation < ApplicationRecord
   # アソシエーション
-  has_many :contacts
+  has_one :contact
+  accepts_nested_attributes_for :contact
 
 
   # クラスメソッド
   def self.reservation
-    reservations = Reservation.all.where("day >= ?", Date.current).where("day < ?", Date.current >> 3).order(day: :desc)
+    reservations = Reservation.where("day >= ?", Date.current).where("day < ?", Date.current >> 3).order(day: :desc)
     reservation_data = []
     reservations.each do |reservation|
       reservations_hash = {}

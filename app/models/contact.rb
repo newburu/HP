@@ -10,7 +10,7 @@ class Contact < ApplicationRecord
 
 
   # アソシエーション
-  belongs_to :reservation, optional: true
+  belongs_to :reservation, foreign_key: "reservation_id", optional: true
 
 
   # バリデーション
@@ -31,8 +31,8 @@ class Contact < ApplicationRecord
   validates :menu,                  presence: { message: 'を選択してください。' },
                                     inclusion: { in: MENU_VALUES, allow_blank: true }
 
-  validates :discount,              presence: false
-                                    #length: {maximum: 255}
+  validates :discount,              # presence: true
+                                    # length: {maximum: 255}
 
   validates :payment,               presence: false
                                     #length: {maximum: 255}

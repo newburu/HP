@@ -1,6 +1,7 @@
 class CreateContacts < ActiveRecord::Migration[6.1]
   def change
     create_table :contacts do |t|
+      t.references :reservation,      foreign_key: true
       t.string    :name,              null: false
       t.string    :name_hiragana,     null: false
       t.string    :email,             null: false
