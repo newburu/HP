@@ -25,11 +25,8 @@ class ContactsController < ApplicationController
   end
 
   def create
-    @contact = Contact.new(contact_reservation_params)
-    @contact.build_reservation
-#binding.pry
-
-    if @contact.save
+    @reservation = Reservation.new(contact_reservation_params)
+    if @reservation.build_contact.save
       redirect_to finish_contacts_path
     else
       redirect_to new_contacts_path, alert: '何らかのエラーが発生しました。申し訳ございませんが、内容をご確認の上最初からやり直してください。'
@@ -50,10 +47,10 @@ class ContactsController < ApplicationController
   end
 
   def contact_reservation_params
-    params.require(:contact).permit(
-      :name, :name_hiragana, :email, :matter, :menu, :discount, :payment, :content,
-      reservation_attributes: [
-        :day, :time
+    params.require(:reservation).permit(
+      :day, :time,
+      contact_attributes: [
+        :name, :name_hiragana, :email, :matter, :menu, :discount, :payment, :content,
     ])
   end
 end

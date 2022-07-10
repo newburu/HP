@@ -20,7 +20,6 @@ ActiveRecord::Schema.define(version: 2022_06_14_012906) do
   end
 
   create_table "contacts", force: :cascade do |t|
-    t.integer "reservation_id"
     t.string "name", null: false
     t.string "name_hiragana", null: false
     t.string "email", null: false
@@ -31,7 +30,6 @@ ActiveRecord::Schema.define(version: 2022_06_14_012906) do
     t.text "content", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["reservation_id"], name: "index_contacts_on_reservation_id"
   end
 
   create_table "profiles", force: :cascade do |t|
@@ -40,12 +38,14 @@ ActiveRecord::Schema.define(version: 2022_06_14_012906) do
   end
 
   create_table "reservations", force: :cascade do |t|
+    t.integer "contact_id"
     t.date "day"
     t.string "time"
     t.datetime "start_time"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["contact_id"], name: "index_reservations_on_contact_id"
   end
 
-  add_foreign_key "contacts", "reservations"
+  add_foreign_key "reservations", "contacts"
 end
