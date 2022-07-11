@@ -4,4 +4,9 @@ Rails.application.routes.draw do
   resources :articles
   resources :profiles, :only => :index
   get '/contacts', to: 'contacts#index'
+
+  namespace :admin do
+    resources :articles
+  end
+  
 end
