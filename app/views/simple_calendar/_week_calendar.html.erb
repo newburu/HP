@@ -1,0 +1,62 @@
+<% reservations = Reservation.reservation %>
+<div class="calendar-heading text-center m-4">
+  <h2 class='m-5'>以下のカレンダーから面談希望日を選択してください</h2>
+  <%= link_to t('simple_calendar.previous', default: '前週'), calendar.url_for_previous_view %>
+  <% if calendar.number_of_weeks == 1 %>
+    <span class="calendar-title"><%= t('simple_calendar.week', default: '1週間') %></span>
+  <% else %>
+    <span class="calendar-title"><%= t('simple_calendar.week', default: '1週間') %></span>
+  <% end %>
+  <%= link_to t('simple_calendar.next', default: '翌週'), calendar.url_for_next_view %>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>時間</th>
+      <% date_range.slice(0, 7).each_with_index do |day, i| %>
+        <% if i == 0 %>
+          <th class='text-danger'><%= t('date.abbr_day_names')[day.wday] %></th>
+        <% elsif i == 6%>
+          <th class='text-primary'><%= t('date.abbr_day_names')[day.wday] %></th>
+        <% else %>
+          <th><%= t('date.abbr_day_names')[day.wday] %></th>
+        <% end %>
+      <% end %>
+    </tr>
+  </thead>
+  <tbody>
+    <% date_range.each_slice(7) do |week| %>
+      <tr>
+        <td></td>
+        <% week.each do |day| %>
+          <%= content_tag :td, class: calendar.td_classes_for(day) do %>
+            <% passed_block.call day.strftime("%-m/%-d"), sorted_events.fetch(day, []) %>
+          <% end %>
+        <% end %>
+      </tr>
+      <% times.each do |time| %>
+        <tr>
+          <td><%= time %></td>
+          <% week.each do |day| %>
+            <td>
+              <% if check_reservation(reservations, day, time) || Date.today >= day || Time.current >= time %>
+                <%= '×' %>
+              <% else %>
+                <%= link_to reservation_contacts_path(day: day, time: time) do %> 
+                  <%= '〇' %>
+                <% end %>
+              <% end %>
+            </td>
+          <% end %>
+        </tr>
+      <% end %>
+    <% end %>
+  </tbody>
+</table>
+<div class='text-center'>
+  <%= form_with model: @reservation, url: confirm_contacts_path, local: true do |f| %>
+    <%= f.hidden_field :day %>
+    <%= f.hidden_field :time %>
+    <%= f.submit value: '面談希望しない方はこちらを選択してください', class: 'btn btn-primary mx-auto d-block' %>
+  <% end %>
+</div>
