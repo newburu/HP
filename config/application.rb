@@ -15,8 +15,11 @@ module Hp
     #
     # These settings can be overridden in specific environments using the files
     # in config/environments, which are processed later.
-    #
-    # config.time_zone = "Central Time (US & Canada)"
-    # config.eager_load_paths << Rails.root.join("extras")
+    config.beginning_of_week = :sunday
+    config.i18n.default_locale = :ja
+    config.time_zone = 'Tokyo'
+    config.active_record.default_timezone = :local
+    # config/locales/配下の全てのrb, ymlファイルを読み込み対象とする
+    config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}').to_s]
   end
 end

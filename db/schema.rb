@@ -10,11 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_05_30_231731) do
+ActiveRecord::Schema.define(version: 2022_06_14_012906) do
 
   create_table "articles", force: :cascade do |t|
     t.string "title"
     t.text "body"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "contacts", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "name_hiragana", null: false
+    t.string "email", null: false
+    t.string "matter", null: false
+    t.string "menu"
+    t.string "discount"
+    t.string "payment"
+    t.text "content", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -24,4 +37,15 @@ ActiveRecord::Schema.define(version: 2022_05_30_231731) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "reservations", force: :cascade do |t|
+    t.integer "contact_id"
+    t.date "day"
+    t.string "time"
+    t.datetime "start_time"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["contact_id"], name: "index_reservations_on_contact_id"
+  end
+
+  add_foreign_key "reservations", "contacts"
 end

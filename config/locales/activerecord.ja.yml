@@ -1,0 +1,20 @@
+ja:
+  activerecord:
+    models:
+      contact: 'お知らせ'
+      reservation: '予約'
+
+    attributes:
+      contact:
+        name: '名前'
+        name_hiragana: 'ふりがな'
+        email: 'メールアドレス'
+        matter: 'ご内容'
+        menu: 'ご希望のメニュー'
+        discount: 'お顔出し割引適用'
+        payment: 'お支払い方法'
+        content: 'お問い合わせ内容'
+      reservation:
+        contact_id: 'お知らせID'
+        day: '面談日'
+        time: '面談時間'

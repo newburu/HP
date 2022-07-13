@@ -3,5 +3,10 @@ Rails.application.routes.draw do
 
   resources :articles
   resources :profiles, :only => :index
-  get '/contacts', to: 'contacts#index'
+  resource :contacts, :only => [:new, :create] do
+    match 'calendar', to: 'contacts#calendar', as: 'calendar', via: [:get, :post]
+    get 'reservation'
+    post 'confirm'
+    get 'finish'
+  end
 end
