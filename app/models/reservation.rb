@@ -4,6 +4,7 @@ class Reservation < ApplicationRecord
 
   # アソシエーション
   belongs_to :contact, foreign_key: "contact_id"
+  accepts_nested_attributes_for :contact
 
 
   # クラスメソッド

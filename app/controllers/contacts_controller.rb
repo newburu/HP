@@ -21,12 +21,12 @@ class ContactsController < ApplicationController
              
   def confirm
     @reservation = Reservation.new(reservation_params)
-    @contact = Contact.new(session[:contact])
+    @reservation.contact = Contact.new(session[:contact])
   end
 
   def create
     @reservation = Reservation.new(contact_reservation_params)
-    if @reservation.build_contact.save
+    if @reservation.save
       redirect_to finish_contacts_path
     else
       redirect_to new_contacts_path, alert: '何らかのエラーが発生しました。申し訳ございませんが、内容をご確認の上最初からやり直してください。'
