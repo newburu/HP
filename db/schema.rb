@@ -33,6 +33,8 @@ ActiveRecord::Schema.define(version: 2022_06_14_012906) do
   end
 
   create_table "profiles", force: :cascade do |t|
+    t.string "image"
+    t.text "note"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
