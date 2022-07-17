@@ -12,5 +12,6 @@ Rails.application.routes.draw do
   end
   namespace :admin do
     resources :images
+    resources :home, :only => [:new, :create]
   end
 end
