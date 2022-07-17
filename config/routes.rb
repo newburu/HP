@@ -11,6 +11,6 @@ Rails.application.routes.draw do
     get 'finish'
   end
   namespace :admin do
-    resource :images
+    resources :images
   end
 end

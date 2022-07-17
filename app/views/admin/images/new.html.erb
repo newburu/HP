@@ -1,0 +1,7 @@
+<div class='wrapper text-center'>
+  <%= form_with(model: @image, url: {controller: 'images', action: 'create'}, local: true) do |f| %>
+    <%= f.file_field :file %>
+    <%= f.text_area :note %>
+    <%= f.submit '保存する' %>
+  <% end %>
+</div>
