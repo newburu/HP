@@ -1,4 +1,8 @@
 class Admin::HomeController < ApplicationController
+  def index
+    @homes = Home.all
+  end
+
   def new
     @home = Home.new
   end
