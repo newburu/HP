@@ -1,3 +1,316 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+*{
+  font-family: 'MS PMincho';
+}
+#navbarSupportedContent{
+  height: 90%;
+  width: auto;
+  background-image: linear-gradient(180deg, #F1DCDC 75%, #FFFFFF 100%);
+}
+.nav-link{
+  text-shadow: 10px 10px 10px #808080
+}
+.menu{
+  font-size: 25px;
+}
+.menu-text{
+  display: block;
+  margin-top: -10px;
+  font-size: 10px;
+  height: 65px; 
+}
+.yrk{
+  opacity: 0.5;
+  width: 100%;
+  padding-left: 10%;
+  height: 95%;
+}
+.nav-item{
+  padding: 0px 10px;
+  margin-left: 25px;
+}
+.text-posission {
+  text-align: center;
+  margin-top: 15%
+}
+.all-woman{
+  color: #949494;
+  font-size: 65px;
+}
+.bright_future{
+  font-size: 65px;
+  color: #BA8888;
+}
+.logo{
+  margin-top:10%;
+  margin-bottom:15%;
+  width: 45%;
+  height: auto;
+}
+#howto{
+  margin-top: 15%;
+  margin-left: 28%;
+  display: flex;
+  justify-content: center;
+}
+.howto{
+  font-size: 85px;
+  padding: 50px;
+}
+.flower{
+  filter: blur(0px) brightness(143%) contrast(138%) grayscale(0%) invert(0%) hue-rotate(360deg) invert(0%) opacity(40%) saturate(234%) sepia(0%);
+  height: 750px;
+  width: 600px;
+  padding-top: 0px;
+}
+#center-word{
+  margin-left: 25%;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  width: 50%;
+  background-color: #FFF6F6;
+}
+.personal{
+  display: block;
+  margin-top: -10px;
+}
+.color-diagnosis, .skeletal-diagnosis, .facetype{
+  font-size: 65px;
+  padding: 0px;
+}
+.skeletal-diagnosis{
+  padding-top: 10%;
+}
+.kakeru{
+  font-size: 65px;
+  margin-top: 50px;
+}
+.phrase{
+  font-size: 65px;
+  margin-top: 15%;
+  text-align: center;
+}
+.bird{
+  opacity: 0.2;
+  transform: scale(-1, 1);
+}
+.solution{
+  margin-top: 5%;
+  margin-bottom: 10%;
+  margin-left:45%;
+}
+.solution h2{
+  font-size: 65px;
+  border-bottom: solid 2px black;
+  width: fit-content;
+}
+#color{
+  margin-top: 5%;
+  background-color:#FAE6E6;
+  border-radius: 45px;
+  height: 500px;
+}
+.color{
+  font-size: 65px;
+  padding-top: 0px;
+  font-weight: bold;
+}
+.palette{
+  filter: invert(88%) sepia(61%) saturate(0%) hue-rotate(229deg) brightness(120%) contrast(101%);
+  transform: scale(-1, 1);
+  margin-left: 65%;
+  margin-top: 25%;
+}
+.coloring-image{
+  padding-left: 35%;
+}
+.color-text{
+  padding: 5%;
+  background-color: rgba(251, 235, 235, 0.3);
+  border-radius: 45px;
+  width: auto;
+  font-size: 20px;
+}
+.first-text{
+  font-size: 65px;
+}
+.styling-image{
+  background-image: url("style.JPG");
+  background-size: cover;
+  padding-top: 60%;
+  padding-left: 20%;
+  width: 800px;
+  height: 800px;
+}
+.style-text{
+  padding: 5%;
+  margin-top: 25%;
+  background-color: rgba(251, 235, 235, 0.3);
+  border-radius: 45px;
+  width: 150%;
+  font-size: 20px;
+}
+#style{
+  margin-top: 5%;
+  background-color:#FAE6E6;
+  border-radius: 45px;
+  height: 500px;
+}
+.style{
+  font-weight: bold;
+  font-size: 65px;
+}
+.face_type{
+  margin-top: 35%;
+  font-weight: bold;
+  font-size: 65px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.woman{
+  width: 150px;
+  padding-top: -30%;
+  filter: invert(88%) sepia(61%) saturate(0%) hue-rotate(229deg) brightness(107%) contrast(101%);
+}
+.wrapper{
+  margin-top: 10%;
+}
+.faceType{
+  padding-left: 90%;
+  margin-top: 30%;
+}
+.special_option{
+  margin-top: 20%;
+  margin-left: 45%;
+}
+.special_option h3{
+  font-size: 35px;
+}
+.consult{
+  background-image: url("consult.jpg");
+  background-size: cover;
+  padding-top: 60%;
+  padding-left: 20%;
+  width: 800px;
+  height: 800px;
+}
+.consulting{
+  font-weight: bold;
+  font-size: 65px;
+}
+.classes{
+  width: 150px;
+  padding-top: -30%;
+  filter: invert(88%) sepia(61%) saturate(0%) hue-rotate(229deg) brightness(107%) contrast(101%);
+}
+.salon{
+  margin-top: 15%;
+  margin-bottom: 10%;
+  margin-left:45%;
+}
+.salon h2{
+  font-size: 65px;
+  border-bottom: solid 2px black;
+  width: fit-content;
+}
+.salon-image{
+  text-align: center;
+}
+.salon_image{
+  object-fit: cover;
+	height: 1000px;
+	width: 1500px;
+  opacity: 0.8;
+  margin-bottom: 10%;
+  box-shadow: 0 0 8px #333;
+}
+#salon h4{
+  color: #878282;
+  text-shadow: 1px 1px 1px #808080;
+  letter-spacing: 5px;
+  font-size: 60px;
+  text-align: center;
+}
+.number01{
+  margin-top: 10%;
+}
+.num-01{
+  font-size: 100px;
+  letter-spacing: 0.2px;
+  opacity: 0.5;
+}
+.num01{
+  border: 1px solid #F28686;
+  width: 500px;
+  height: 500px;
+  margin-left: 15%;
+  text-align: center;
+  color: #AD9292;
+  font-size: 35px;
+}
+.num01-text{
+  color: #814C4C;
+  font-size: 65px;
+  width: 600px;
+  box-sizing: border-box;
+  margin-left: -20%;
+  margin-top: 40%;
+  text-indent:-1.5em;
+}
+
+.number02{
+  margin-top: -2%;
+  margin-left: 60%;
+}
+.num-02{
+  font-size: 100px;
+  letter-spacing: 0.2px;
+  opacity: 0.5;
+}
+.num02{
+  border: 1px solid #F28686;
+  width: 500px;
+  height: 500px;
+  margin-right: 25%;
+  text-align: center;
+  color: #AD9292;
+  font-size: 35px;
+}
+.num02-text{
+  color: #814C4C;
+  font-size: 61px;
+  width: 600px;
+  box-sizing: border-box;
+  margin-left: -20%;
+  margin-top: 50%;
+  text-indent:-0.5em;
+}
+
+.number03{
+  margin-top: 10%;
+}
+.num-03{
+  font-size: 100px;
+  letter-spacing: 0.2px;
+  opacity: 0.5;
+}
+.num03{
+  border: 1px solid #F28686;
+  width: 500px;
+  height: 500px;
+  margin-left: 15%;
+  text-align: center;
+  color: #AD9292;
+  font-size: 35px;
+}
+.num03-text{
+  color: #814C4C;
+  font-size: 60px;
+  width: 825px;
+  box-sizing: border-box;
+  margin-left: -20%;
+  margin-top: 50%;
+  text-indent:-3.0em;
+}

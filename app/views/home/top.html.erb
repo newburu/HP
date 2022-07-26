@@ -1,7 +1,166 @@
-<%= render partial: '/shared/header' %>
+<nav class="navbar-expand-lg" id="navbarSupportedContent">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-7">
+        <div class="collapse navbar-collapse">
+          <ul class="navbar-nav mr-auto">
+            <li class='nav-item'>
+              <%= link_to root_path, {class: 'nav-link text-white'} do %>
+                <p class='menu'>Top</p>
+                <span class='menu-text'>トップ</span>
+              <% end %>
+            </li>
+            <li class="nav-item">
+              <%= link_to profiles_path, {class: "nav-link text-white"} do %>
+                <p class='menu'>Profile</p>
+                <span class='menu-text'>プロフィール</span>
+              <% end %>
+            </li>
+            <li class="nav-item">
+              <%= link_to "https://ameblo.jp/li-14", {class: "nav-link text-white"} do %>
+                <p class='menu'>Column</p>
+                <span class='menu-text'>コラム</span>
+              <% end %>
+            </li>
+            <li class="nav-item">
+              <%= link_to new_contacts_path, {class: "nav-link text-white"} do %>
+                <p class='menu'>Contact</p>
+                <span class='menu-text'>お知らせ</span>
+              <% end %>
+            </li>
+          </ul>
+        </div>
+        <div class='text-posission'>
+          <h2 class='all-woman'>すべての女性に</h2><br><span class="bright_future">”輝く未来を”</span>
+        </div>
+      </div>
+      <div class="col-5">
+        <%= image_tag "top_image.JPG", class: "yrk" %>
+      </div>
+    </div>
+  </div>
+</nav>
 
-<div class='container-fluid'>
-  <div class='row'>
-    <%= image_tag "#{@home.url}", class: 'col-12'%>
+<div class="text-center">
+  <%= image_tag 'LisBlanc.png', class: "logo" %>
+</div>
+
+<div id="howto">
+  <h2 class="howto">How to...?</h2>
+  <%= image_tag "flower.png", class: "flower"%>
+</div>
+
+<div class="text-center" id="center-word">
+  <span class="personal">パーソナル</span>
+  <p class="color-diagnosis">カラー診断</p>
+  <p class="skeletal-diagnosis">骨格診断</p>
+  <p class="kakeru">×</p>
+  <p class="facetype">顔タイプ骨格診断</p>
+</div>
+
+<div class="phrase">
+  <p>生まれ持った”骨格,身体の色,顔の形”から<br>あなたの魅力を引き出します</p>
+  <%= image_tag "bird.png", class: "bird" %>
+</div>
+
+<div class="solution">
+  <h2>Solution</h2>
+</div>
+
+ <div class="container-fluid">
+  <div class="row">
+    <div class="col-4" id="color">
+      <p class="color">Color</p>
+      <%= image_tag "palette.png", class: "palette" %>
+    </div>
+    <div class="col-7">
+      <%= image_tag "coloring.jpeg", class: "coloring-image" %>
+      <p class="color-text"><span class="first-text">あ</span>なただけの”型”.............<br>
+        □似合うデザイン<br>
+        □似合う素材
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="wrapper">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-6">
+        <div class="styling-image">
+          <p class="style-text"><span class="first-text">あ</span>なただけの”色”.............<br>
+            □似合うメイクの色<br>
+            □似合うファッションの色
+          </p>
+        </div>
+      </div>
+      <div class="col-4" id="style">
+        <p class="style">Style</p>
+        <div class="face_type">
+          <%= image_tag "woman.png", class: "woman" %>
+          <p class="faceType">FaceType</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="special_option">
+  <h3>Special Option</h3>
+</div>
+
+<div class="wrapper">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-6">
+        <div class="consult">
+          <p class="style-text"><span class="first-text">あ</span>なただけの”キャリア”.............<br>
+            □女性起業<br>
+            □マインドセット（自信の付け方）
+          </p>
+        </div>
+      </div>
+      <div class="col-4" id="style">
+        <p class="consulting">Consulting</p>
+        <div class="face_type">
+          <%= image_tag "class.png", class: "classes" %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> 
+
+<div class="salon">
+  <h2>Salon</h2>
+</div>
+<div class="salon-image">
+  <%= image_tag "salon.jpeg", class: "salon_image" %>
+</div>
+
+<div id="salon">
+  <h4>当サロン３つの特徴</h4>
+  <div class="number01">
+    <div class="num01">
+      <p class="num-01">01</p>
+      <p class="num01-text">
+        白を基調とした<br>洗練された雰囲気
+      </p>
+    </div>
+  </div>
+  <div class="number02">
+    <div class="num02">
+      <p class="num-02">02</p>
+      <p class="num02-text">
+        自然光が多く入るため<br>より的確な診断ができる
+      </p>
+    </div>
+  </div>
+  <div class="number03">
+    <div class="num03">
+      <p class="num-03">03</p>
+      <p class="num03-text">
+        プライベートサロンのため<br>周りを気にせず、落ち着ける空間
+      </p>
+    </div>
   </div>
 </div>
