@@ -5,36 +5,40 @@
   <link href="https://cdn.quilljs.com/1.3.6/quill.bubble.css" rel="stylesheet">
 </head>
 
-<%= form_with model: @article, url: {controller: 'articles', action: 'create'} do |f| %>
+<%= form_with model: @article, url: { controller: 'articles', action: 'create' } do |f| %>
   <div class="row">
     <%= f.label :title, 'タイトル', class: 'col-3' %>
     <%= f.text_field :title, class: 'col-7' %>
   </div>
-  <div class='editor' style='height: 30rem'>
-    <%= f.text_area :body %>
-  </div>
+  <div id='js-editor' style='height: 30rem'></div>
+  <input type="hidden" id="js-editor-input" name="article[body]">
   <div class='row'>
-    <%= f.submit '保存する', class: 'button' %>
+    <%= f.submit '保存する', class: 'button', id: 'js-submit' %>
   </div>
 <% end %>
 
-<script src="https://cdn.quilljs.com/1.2.2/quill.js"></script>
-<script>    
+<script>
   var toolbarOptions = [
     ['bold', 'italic', 'underline', 'strike'],
     ['blockquote'],
-    [{'header': [1, 2, 3, 4, 5, 6, false]}],
-    [{'align': []}],
-    [{'list': 'ordered'}, {'list': 'bullet'}],
-    [{'color': [] }, { 'background': [] }],
+    [{ 'header': [1, 2, 3, 4, 5, 6, false] }],
+    [{ 'align': [] }],
+    [{ 'list': 'ordered' }, { 'list': 'bullet' }],
+    [{ 'color': [] }, { 'background': [] }],
     ['link', 'image', 'video'],
   ]
 
-  var quill = new Quill('.editor', {
+  var quill = new Quill('#js-editor', {
     modules: {
       toolbar: toolbarOptions
     },
-
     theme: 'snow'
+  });
+
+  const editor = document.getElementById('js-editor');
+  const editorInput = document.getElementById('js-editor-input');
+  quill.on('text-change', function(delta, oldDelta, source) {
+    var editorHtml = editor.querySelector('.ql-editor').innerHTML;
+    editorInput.value = editorHtml;
   });
 </script>
