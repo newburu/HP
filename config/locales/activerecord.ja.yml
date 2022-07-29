@@ -1,10 +1,14 @@
 ja:
   activerecord:
     models:
+      article: 'コラム'
       contact: 'お知らせ'
       reservation: '予約'
 
     attributes:
+      article:
+        title: 'タイトル'
+        body: '本文'
       contact:
         name: '名前'
         name_hiragana: 'ふりがな'
