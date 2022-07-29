@@ -1,7 +1,0 @@
-<% @images.each do |image| %>
-  <%= image_tag "#{image.file}" %>
-  <%= request.base_url %><%= image.file.url %>
-  
-  <br>
-  <%= image.note %>
-<% end %>
