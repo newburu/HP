@@ -4,8 +4,6 @@ ja:
       article: 'コラム'
       contact: 'お知らせ'
       reservation: '予約'
-      profile: 'プロフィール'
-      Image: '画像'
 
     attributes:
       article:
@@ -24,6 +22,3 @@ ja:
         contact_id: 'お知らせID'
         day: '面談日'
         time: '面談時間'
-      image:
-        file: '画像ファイル'
-        note: 'メモ欄'

@@ -39,7 +39,7 @@
           <td><%= time %></td>
           <% week.each do |day| %>
             <td>
-              <% if check_reservation(reservations, day, time) || Date.today+1 >= day  %>
+              <% if check_reservation(reservations, day, time) || Date.today >= day || Time.current >= time %>
                 <%= '×' %>
               <% else %>
                 <%= link_to reservation_contacts_path(day: day, time: time) do %> 

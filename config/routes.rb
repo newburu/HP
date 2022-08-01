@@ -12,8 +12,4 @@ Rails.application.routes.draw do
     post 'confirm'
     get 'finish'
   end
-  namespace :admin do
-    resources :images
-    resources :home, except: %i[show]
-  end
 end
