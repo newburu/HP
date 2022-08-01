@@ -32,11 +32,6 @@ ActiveRecord::Schema.define(version: 2022_06_14_012906) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "profiles", force: :cascade do |t|
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "reservations", force: :cascade do |t|
     t.integer "contact_id"
     t.date "day"
