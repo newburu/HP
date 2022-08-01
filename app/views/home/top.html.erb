@@ -47,19 +47,17 @@
 
 <div id="howto">
   <h2 class="howto">How to...?</h2>
-  <%= image_tag "flower.png", class: "flower"%>
 </div>
 
 <div class="text-center" id="center-word">
   <span class="personal">パーソナル</span>
   <p class="color-diagnosis">カラー診断</p>
-  <p class="skeletal-diagnosis">骨格診断</p>
   <p class="kakeru">×</p>
   <p class="facetype">顔タイプ骨格診断</p>
 </div>
 
 <div class="phrase">
-  <p>生まれ持った”骨格,身体の色,顔の形”から<br>あなたの魅力を引き出します</p>
+  <p>生まれ持った”肌の色,骨格,顔のタイプ”から<br>あなたの魅力を引き出します</p>
   <%= image_tag "bird.png", class: "bird" %>
 </div>
 
@@ -67,18 +65,19 @@
   <h2>Solution</h2>
 </div>
 
- <div class="container-fluid">
+<div class="container-fluid">
   <div class="row">
-    <div class="col-4" id="color">
+    <div class="col-5" id="color">
       <p class="color">Color</p>
       <%= image_tag "palette.png", class: "palette" %>
     </div>
     <div class="col-7">
-      <%= image_tag "coloring.jpeg", class: "coloring-image" %>
-      <p class="color-text"><span class="first-text">あ</span>なただけの”型”.............<br>
-        □似合うデザイン<br>
-        □似合う素材
-      </p>
+      <div class="color-word">
+        <p class="color-text"><span class="first-text">あ</span>なただけの”カタチ”.............<br>
+          □似合うデザイン<br>
+          □似合う素材
+        </p>
+      </div>
     </div>
   </div>
 </div>
@@ -94,7 +93,7 @@
           </p>
         </div>
       </div>
-      <div class="col-4" id="style">
+      <div class="col-6" id="style">
         <p class="style">Style</p>
         <div class="face_type">
           <%= image_tag "woman.png", class: "woman" %>
@@ -120,7 +119,7 @@
           </p>
         </div>
       </div>
-      <div class="col-4" id="style">
+      <div class="col-6" id="style">
         <p class="consulting">Consulting</p>
         <div class="face_type">
           <%= image_tag "class.png", class: "classes" %>
@@ -162,5 +161,5 @@
         プライベートサロンのため<br>周りを気にせず、落ち着ける空間
       </p>
     </div>
-  </div>
+  </div> 
 </div>
