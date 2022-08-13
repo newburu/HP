@@ -1,120 +1,132 @@
-#wrapper {
-  background: -webkit-gradient(linear, left top, right bottom, from(#87CEFA), to(#FFDEAD));
-  background: -webkit-linear-gradient(left top, #87CEFA, #FFDEAD);
-  background: -moz-linear-gradient(left top, #87CEFA, #FFDEAD);
-  background: -o-linear-gradient(left top, #87CEFA, #FFDEAD);
-  background: linear-gradient(to right bottom, #87CEFA, #FFDEAD);
-  animation-name:fadeUpAnime;
-  animation-duration:2.0s;
-  animation-fill-mode:forwards;
-  opacity:0;
-}
 
-@keyframes fadeUpAnime{
-  from {
-  opacity: 0;
-  transform: translateX(100px);
-  }
-
-  to {
-  opacity: 1;
-  transform: translateX(0);
-  }
-}
-/* 共通のアイコンエフェクト */
-.socialEffect__link {
-  margin: .3em;
-  display: block;
-  width: 60px;
-  height: 60px;
-  line-height: 60px;
-  border-radius: 50%;
+.ribbon14 {  
+  position: absolute;
+  top: 0;
+  letter-spacing: 2.5px;
+  right: 10px;
+  margin-right: 80%;
+  width: 130px;
+  height: 150px;
   text-align: center;
-  position: relative;
-  z-index: 1;
-  font-size: 1.6rem;
-  transition: transform ease-out 0.2s;
+  font-size: 38px;
+  color: #895B5B;
+  background: rgba(234, 186, 186, 0.2);
 }
-
-.socialEffect__box li {
-  display: inline-block;
-}
-
-
-/* インスタ用アイコン設定 */
-.icon-instagram::before {
-  content: "";
+.ribbon14:after {
+  content: '';
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  z-index: -1;
-  transform: scale(0.9);
+  right: 0;
+  top: 100%;
+  height: 0;
+  border-left: 65px solid rgba(234, 186, 186, 0.2);
+  border-right: 65px solid rgba(234, 186, 186, 0.2);
+  border-bottom: 40px solid transparent;
 }
-.fab.fa-instagram {
-  display: inline-block;
-  width: 90%;
-  height: 90%;
+.logo{
+  width: auto;
+  height: 100px;
+  margin-top: 30%;
 }
-.icon-instagram:hover {
-  transform:translate(0, -20px);
-}
-
-/* フェイスブック用アイコン設定 */
-.icon-facebook::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  border-radius: 50%;
-  z-index: -1;
-  transform: scale(0.9);
-}
-.fab.fa-facebook {
-  display: inline-block;
-  width: 90%;
-  height: 90%;
-}
-.icon-facebook:hover {
-  transform: translate(0, -20px);
+.profile_img{
+  width: 470px;
+  height: 510px;
+  border-radius:50%;
+  margin-top: 35%;
 }
 
-/* ツイッター用アイコン設定 */
-.icon-twitter::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  border-radius: 50%;
-  z-index: -1;
-  transform: scale(0.9);
+.lisblanc-text{
+  padding-left: 30%;
+  padding-top: 15%;
+  font-size: 50px;
+  font-family: 'MS PMincho';
 }
-.fab.fa-twitter {
-  display: inline-block;
-  width: 90%;
-  height: 90%;
+.name{
+  display: flex;
 }
-.icon-twitter:hover {
-  transform: translate(0, -20px);
+.ishidayuriko{
+  padding-left: 30%;
+  padding-top: 7%;
+  font-size: 50px;
+  font-family: 'MS PMincho';
+  text-shadow: #B09F9F;
 }
-
-#story{
-  animation-name:fadeUpAnime;
-  animation-duration:2.0s;
-  animation-fill-mode:forwards;
-  opacity:0;
+.yuriko_kana{
+  padding-top: 7%;
+  font-size: 25px;
+  padding-left: 10%;
 }
-
-@keyframes fadeUpAnime{
-  from {
-  opacity: 0;
-  transform: translateX(100px);
-  }
-
-  to {
-  opacity: 1;
-  transform: translateX(0);
-  }
+.lifestyle{
+  background-color: rgba(234, 186, 186, 0.2);
+  color: #895B5B;
+  font-size: 55px;
+}
+.lifestyle-text{
+  font-size: 32px;
+  color: #AF7E7E;
+}
+.carrer{
+  margin-left: 50px;
+  margin-top: 85px;
+  width: 250px;
+}
+.carrer-text{
+  border-bottom: 1px solid;
+  font-size: 45px;
+}
+.history{
+  margin-left: 50px;
+  margin-top: 85px;
+}
+.history-text{
+  font-family: 'MS PMincho';
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 70px;
+  letter-spacing: 0.1em;
+  color: #AF7E7E;
+}
+.sns{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.insta, .facebook{
+  width: 250px;
+  height: 250px;
+}
+.line{
+  width: 100px;
+  height: 100px;
+  border-radius: 20px;
+  margin-left: 75px;
+}
+.message{
+  margin: 0 auto;
+}
+.message-text{
+  text-align: center;
+  border-bottom: 1px solid;
+  font-size: 45px;
+  margin-top: 60px;
+}
+.message-title{
+  margin-top: 60px;
+  text-align: center;
+  font-size: 45px;
+  letter-spacing: 0.1em;
+  color: #AF7E7E;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.yuriko_message{
+  margin-top: 55px;
+  font-size: 32px;
+  text-align: center;
+  line-height: 52px;
+  letter-spacing: 0.1em;
+  color: #AF7E7E;
+}
+.yurikosname{
+  font-size: 27px;
+  text-align: right;
+  color: #AF7E7E;
 }

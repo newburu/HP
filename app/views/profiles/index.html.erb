@@ -1,59 +1,91 @@
-<head>
-  <% provide(:title, 'プロフィール') %>
-</head>
+<div class="container">
+  <div class="row">
+    <div class="col-4">
+      <div class="ribbon14-wrapper">
+        <span class="ribbon14">Profile</span>
+      </div>
+    </div>
+    <div class="col-2">
+      <%= image_tag "LisBlanc.png", class: "logo" %>
+    </div>
+  </div>
+</div>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-4">
+      <div class="lisblanc">
+        <%= image_tag "style.JPG", class: 'profile_img' %>
+      </div>
+    </div>
+    <div class="col-8">
+      <h3 class="lisblanc-text">LisBlanc主宰</h3>
+      <div class="name">
+        <p class="ishidayuriko">石田百合子</p>
+        <p class="yuriko_kana">IshidaYuriko</p>
+      </div>
+      <div class="lifestyle">
+        <p>”女性のライフスタイルに華と彩を”</p>
+      </div>
+      <div class="lifestyle-text">
+        <p>をコンセプトに、女性の外見と内面の<br>
+           ブラッシュアップサロン”Lis blanc(リブラン)”を創設
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="carrer">
+  <h3 class="carrer-text">経歴</h3>
+</div>
+<div class="history">
+  <p class="history-text">
+  都内カラリストスクール・ワム卒業。同校認定講師。<br>
+  （社）日本カラリスト協会認定講師。色彩診断士、検定指導員<br>
+  同協会認定パーソナルカラリスト・トータルカラリスト<br>
+  （社）日本色彩環境協会認定・色彩福祉士骨格診断アナリスト<br>
 
-<%= render partial: '/shared/header' %>
-<div class="container w-75 p-3 text-center">
-  <h2 class="mb-5">プロフィール</h2>
-  <div class="p-3 mb-2" id="wrapper">
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-sm-5 mt-5">
-          <%= image_tag "human.png" %>
-        </div>
-        <div class="col-sm-7 mt-4">
-          <h3>パーソナルカラー診断／骨格診断／起業コンサルタント</h3>
-          <div class="mt-5">
-            <div class="d-inline">
-              <span>石田 百合子</span>
-            </div>
-            <div class="d-inline p-5">
-              <span class="en">Ishida Yuriko</span>
-            </div>
-          </div>
-          <p class="mt-4">テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。</p>
-          <ul class="socialEffect__box">
-            <li>
-              <div class="socialEffect__link icon-instagram">
-                <%= link_to image_tag("instagram.png", class: "fab fa-instagram"), "https://www.instagram.com/yuricolor/", target: :_blank, rel: "noopener noreferrer" %>
-              </div>
-            </li>
-            <li>
-              <div class="socialEffect__link icon-facebook">
-                <%= link_to image_tag("facebook.png", class: "fab fa-facebook"), "https://www.facebook.com/ishida.yuriko.12", target: :_blank, rel: "noopener noreferrer" %>
-              </div>
-            </li>
-            <li>
-              <div class="socialEffect__link icon-twitter">
-                <%= link_to image_tag("twitter.png", class: "fab fa-twitter"), "https://twitter.com/yuriko_lis", target: :_blank, rel: "noopener noreferrer" %>
-              </div>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-  <h2 class="mt-5">ストーリー</h2>
-  <div class="p-3 mb-2" id="story">
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-sm-5 mt-5">
-          <%= image_tag "human.png" %>
-        </div>
-        <div class="col-sm-7 mt-4">
-          <p class="mt-4">テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。</p>
-        </div>
-      </div>
-    </div>
-  </div>
+  大手通信教育企業や大手保険会社、百貨店等、企業や地域行政機関でのセミナー講師。<br>
+
+  現在は専修高等学校にてファッションデザイン・色彩講師としても教鞭中。<br>
+  </p>
+</div>
+<div class="sns">
+  <%= link_to image_tag("instagram.png" , class: 'insta'), "https://www.instagram.com/yuricolor/", target: :_blank, rel: "noopener noreferrer" %>
+  <%= link_to image_tag("facebook.png", class: 'facebook'), "https://www.facebook.com/ishida.yuriko.12", target: :_blank, rel: "noopener noreferrer" %>  
+  <%= image_tag "line.png", class: 'line' %> 
+</div>
+<div class="message w-75">
+  <h3 class="message-text">Message</h3>
+  <p class="message-title">運勢は 生まれた日より”選んだ服”で決まると思う</p>
+  <p class="yuriko_message">
+    私の好きな言葉です。<br>
+    私は占いではなく”どんな服を纏うか”で<br>
+    その日の運勢は決まると考えています。<br>
+    <br>
+    <br>
+    あなたの身体を包む衣服、あなたの持つバック<br>
+    あなたのお顔を包むヘアスタイル、あなたの施すメイク<br>
+    <br>
+    <br>
+    全て、あなたが選んだものです。<br>
+    いわばあなた”そのもの”です。<br>
+    <br>
+    <br>
+    装うことは、実は裸でいるよりも<br>
+    自分らしさが表れているのかもしれません<br>
+    <br>
+    <br>
+    内面と外見は表裏一体<br>
+    <br>
+    外見のイメージを整えることで、内面のマインドが美しく変わって行くのが、<br>
+    柔軟な女性ならではの強みです<br>
+    <br>
+    つまり、<br>
+    外見を整えることで、おしゃれもビジネスも恋愛も<br>
+    もっと うまくいくようになりますよ♡<br>
+    <br>
+    可愛く賢くイメージもマインドもあげて<br>
+    選ばれる女性になりましょう！<br>
+  </p>
+  <p class="yurikosname">石田百合子</p>
 </div>
