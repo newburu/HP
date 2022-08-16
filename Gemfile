@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-git_source(:github) { |repo| "https://github.com/#{repo}.git" }
+git_source(:github) { |repo| 'https://github.com/#{repo}.git' }
 
 ruby '2.7.4'
 
@@ -32,7 +32,8 @@ gem 'jquery-rails'
 gem 'enumerize'
 gem 'enum_help'
 gem 'rails-i18n'
-gem "simple_calendar", "~> 2.0"
+gem 'simple_calendar', '~> 2.0'
+gem 'devise'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
