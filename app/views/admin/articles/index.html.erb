@@ -1,0 +1,4 @@
+<% @articles.each do |article| %>
+  <th><%= article.title %></th>
+  <th><%= article.body.html_safe %></th>
+<% end %>
