@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   root to: 'homes#top'
   namespace :admin do
     resources :articles
-    resources :contacts,  except: [:show]
+    resources :contacts,  except: [:edit]
   end
   resources :profiles, :only => :index
   resource :contacts, :only => [:new, :create] do
