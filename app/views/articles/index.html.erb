@@ -1,0 +1,20 @@
+<h2 class="blog-h2">Blog</h2>
+
+<div class="container-fluid w-75">
+  <div class="row">
+    <div class="col-7">
+    <% @articles.each do |article| %>
+      <div class="flex">
+        <%= image_tag "#{article.thumbnail}", :size => '320x200' %>
+        <div class="title-body">
+          <h4 class="title"><%= article.title %></h4>
+          <p class="body"><%= article.body[0..25]%>.....</p>
+        </div>
+      </div>
+    <% end %>
+    </div>
+    <div class="col-5">
+    <div>
+  </div>
+</div>
+<%= paginate @articles %>

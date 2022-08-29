@@ -13,4 +13,5 @@ Rails.application.routes.draw do
     post 'confirm'
     get 'finish'
   end
+  resources :articles, :only => [:index, :show]
 end
