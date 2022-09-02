@@ -4,16 +4,23 @@
   <div class="row">
     <div class="col-7">
     <% @articles.each do |article| %>
-      <div class="flex">
-        <%= image_tag "#{article.thumbnail}", :size => '320x200' %>
-        <div class="title-body">
-          <h4 class="title"><%= article.title %></h4>
-          <p class="body"><%= article.body[0..25]%>.....</p>
+      <%= link_to article_path(article), class: 'article-block' do %>
+        <div class="flex">
+          <%= image_tag "#{article.thumbnail}", :size => '320x200' %>
+          <div class="title-body">
+            <h4 class="title"><%= article.title %></h4>
+            <p class="body"><%= article.body[0..25]%>.....</p>
+          </div>
         </div>
-      </div>
+      <% end %>
     <% end %>
     </div>
     <div class="col-5">
+      <% @articles_per_month.each do |key, hash| %>
+        <div class="YM">
+          <%= key %>
+        </div>
+      <% end %>
     <div>
   </div>
 </div>

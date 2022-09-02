@@ -6,6 +6,14 @@
   color: #E9DCDC;
   font-size: 100px;
 }
+.article-block{
+  text-decoration: none;
+  color: black;
+}
+.article-block:hover{
+  text-decoration: none;
+  color: #E9DCDC;
+}
 .flex{
   display: flex;
   margin-top: 65px;
@@ -20,4 +28,59 @@
 .body{
   margin-top: 30px;
   font-size: 25px;
+}
+.YM{
+  display: flex;
+  flex-direction: column;
+}
+.pagination{
+  margin-left: 30%;
+  margin: 20px auto 0;
+  width: 75%;
+  display: flex;
+  justify-content: center;
+  padding: 0px 5px;
+}
+.first, .last{
+  margin: auto 15px;
+}
+.last a, .first a {
+  color: #F3DCDC;
+  font-size: 30px;
+}
+.page{
+  margin: 0 15px;
+  font-size: 30px;
+  display: inline-block;
+  background: white;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  font-size: 52px;
+  text-align: center;
+  line-height: 80px;
+  box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, 0.5);
+}
+/*ページネーション自体のデザイン*/
+.page>a {          
+  border: none;
+  color: #F3DCDC;
+  border-radius: 50px;
+}
+
+/* 表示しているページ番号のデザイン */
+.page_current {
+  background-color: #F3DCDC;
+  color: white;
+  border-radius: 50px;  
+}
+
+/*ホバー時のデザイン*/
+.pagination a:hover{
+  color: white;
+  text-decoration: none;
+}
+.current{
+  color: white;
+  background-color: #F3DCDC;
 }
