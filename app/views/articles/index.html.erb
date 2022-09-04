@@ -16,12 +16,14 @@
     <% end %>
     </div>
     <div class="col-5">
-      <% @articles_per_month.each do |key, hash| %>
+      <% @articles_per_months.each do |key, hash| %>
         <div class="YM">
-          <%= key %>
+          <input id="acd-check1" class="acd-check" type="checkbox">
+          <label class="acd-label" for="acd-check1"><%= key %>(<%= hash %>)</label>
         </div>
-      <% end %>
+      <% end %> 
     <div>
   </div>
 </div>
+
 <%= paginate @articles %>
