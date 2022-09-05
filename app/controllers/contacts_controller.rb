@@ -42,8 +42,8 @@ class ContactsController < ApplicationController
     params.require(:contact).permit(:name, :name_hiragana, :email, :matter, :menu, :discount, :payment, :content)
   end
 
-  def reservation_params
-    params.require(:reservation).permit(:day, :time)
+  def reservation_params    
+    params.permit(:day, :time)
   end
 
   def contact_reservation_params

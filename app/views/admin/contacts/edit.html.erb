@@ -1,0 +1,92 @@
+<div class="row no-gutters">
+  <div class="col-2">
+    <%= render'shared/admin_side_bar' %>
+  </div>
+  <div class="col-9">
+    <%= form_with(model: @contact, url: admin_contact_path, local: true) do |f| %>
+    <div class='container-fluid text-center ml-5' id='content'>
+      <div class='mt-2 mb-5 mr-5'>
+        <h2 class='display-4'>Contact</h2>
+        <span><p class='small'>お問い合わせ</p></span>
+      </div>
+      <% if @contact.errors.any? %>
+        <div class = "alert">
+          <ul class='bg-danger'>
+            <% @contact.errors.full_messages.each do |message| %>
+              <li class='list-unstyled text-left text-light p-2'><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+      <% if flash[:alert] %>
+        <div class="alert alert-danger">
+          <%= flash[:alert] %>
+        </div>
+      <% end %>
+      <form>
+        <div class='form-group row'>
+          <div class='col-sm-2 col-form-label'>
+            <%= f.label :name, 'お名前' %>
+          </div>
+          <div class='col-sm-10'>
+            <%= f.text_field :name, class: 'form-control form-control-lg col-sm-8' %>
+          </div>
+        </div>
+        <div class='form-group row mt-5'>
+          <div class='col-sm-2 col-form-label'>
+            <%= f.label :name_hiragana, 'ふりがな' %>
+          </div>
+          <div class='col-sm-10'>
+            <%= f.text_field :name_hiragana, class: 'form-control form-control-lg col-sm-8' %>
+          </div>
+        </div>
+        <div class='form-group row mt-5'>
+          <div class='col-sm-2 col-form-label'>
+            <%= f.label :email, 'メールアドレス' %>
+          </div>
+          <div class='col-sm-10'>
+            <%= f.email_field :email, class: 'form-control form-control-lg col-sm-8' %>
+          </div>
+        </div>
+      </form>
+      <div class='row mt-5'>
+        <div class='col-sm-2 col-form-label'>
+          <%= f.label :matter, 'ご内容' %>
+        </div>
+        <div class='form-select form-select-lg mb-3 col-sm-7'>
+          <%= f.select :matter, {'ご予約': 'ご予約', 'お問い合わせ': 'お問い合わせ', 'その他': 'その他'}, { include_blank: '選択してください'}, { class: 'form-control' } %>
+        </div>
+      </div>
+      <div class='row mt-5'>
+        <div class='col-sm-2 col-form-label'>
+          <%= f.label :menu, 'ご希望のメニュー' %>
+        </div>
+        <div class='form-select form-select-lg mb-2 col-sm-7'>
+          <%= f.select :menu, {'トータルコース': 'トータルコース', 'パーソナルカラー診断': 'パーソナルカラー診断', '顔タイプ骨格診断': '顔タイプ骨格診断', '色見本帳購入': '色見本帳購入', 'パーソナルカラー養成講座無料相談': 'パーソナルカラー養成講座無料相談','講座・講演依頼': '講座・講演依頼'}, { include_blank: '選択してください'}, { class: 'form-control' } %>
+        </div>
+      </div>
+      <div class='row mt-5'>
+        <%= f.label :discount, 'お顔出し割引適用', class: 'col-sm-2 col-form-label' %>
+        <div class='form-select form-select-lg mb-2 col-sm-7'>
+          <%= f.select :discount, {'あり（割引料金）': '割引料金', 'なし（通常料金）': '通常料金'}, { include_blank: '選択してください'}, { class: 'form-control'} %>
+        </div>
+      </div>
+      <div class='row mt-5'>
+        <%= f.label :payment, 'お支払方法', class: 'col-sm-2 col-form-label' %>
+        <div class='form-select form-select-lg mb-2 col-sm-7'>
+          <%= f.select :payment, {'銀行振込': '銀行振込', 'クレジットカード決済': 'クレジットカード決済', '無料相談': '無料相談', 'その他': 'その他'}, { include_blank: '選択してください'}, { class: 'form-control' } %>
+        </div>
+      </div>
+      <div class='row mt-5'>
+        <div class='col-sm-2 col-form-label'>
+          <%= f.label :content, 'お問い合わせ内容' %>
+        </div>
+        <div class='col-sm-7'>
+          <%= f.text_area :content, class: 'form-control', size: '35x15' %>
+        </div>
+      </div>
+      <%= f.submit value: '更新', class: 'btn btn-primary btn-lg mt-5' %>
+    </div>
+    <% end %>
+  </div>
+</div>
