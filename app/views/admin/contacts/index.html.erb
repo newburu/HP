@@ -1,0 +1,25 @@
+<div class="row no-gutters">
+  <div class="col-2">
+    <%= render'shared/admin_side_bar' %>
+  </div>
+  <div class="col-9">
+    <table class="example2">
+      <tr>
+        <th>お名前</th>
+        <th>ふりがな</th>
+        <th>面談日</th>
+        <th>面談時間</th>
+        <th></th>
+      </tr>
+      <% @contacts.each do |contact| %>
+        <tr>
+          <td><%= contact.name %></td>
+          <td><%= contact.name_hiragana %></td>
+          <td><%= contact.reservation.day %></td>
+          <td><%= contact.reservation.time %></td>
+          <td><%= link_to "詳細", edit_admin_contact_path(contact), class: "btn btn--orange btn-c" %></td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+</div>

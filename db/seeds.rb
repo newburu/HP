@@ -9,3 +9,13 @@ Account.create!(
   email: "lilyko14@gmail.com",
   password: "hcRnZ0Kh029pUo86z0lMXwaxafYPcldu"
 )
+5.times do |i|
+  Contact.create!(
+    name: "お名前#{i}",
+    name_hiragana: "ふりがな#{i}",
+    email: "example#{i}@gmail.com",
+    matter: "お問い合わせ",
+    menu: "トータルコース",
+    content: "コンテンツ#{i}"
+  )
+end
