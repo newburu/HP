@@ -32,16 +32,19 @@
 .YM{
   display: flex;
   flex-direction: column;
+  width: 80%;
+  height: 85%;
+  margin-left: 20%;
 }
 .acd-check{
   display: none;
 }
 .acd-label{
-  background: #333;
-  color: #fff;
+  background: #F3DCDC;
+  color: #696969;
   display: block;
   margin-bottom: 1px;
-  padding: 10px;
+  font-size: 25px;
 }
 .acd-content{
   border: 1px solid #333;

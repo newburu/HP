@@ -1,6 +1,6 @@
 <h2 class="blog-h2">Blog</h2>
 
-<div class="container-fluid w-75">
+<div class="container-fluid">
   <div class="row">
     <div class="col-7">
     <% @articles.each do |article| %>
@@ -16,12 +16,17 @@
     <% end %>
     </div>
     <div class="col-5">
-      <% @articles_per_months.each do |key, hash| %>
-        <div class="YM">
-          <input id="acd-check1" class="acd-check" type="checkbox">
-          <label class="acd-label" for="acd-check1"><%= key %>(<%= hash %>)</label>
-        </div>
-      <% end %> 
+      <div class="YM">      
+        <% @articles_per_months.each_with_index do |key, i| %>
+          <% article_title= Article.where(created_at: key[0])[0].title %>
+          <% article_id = Article.where(created_at: key[0])[0].id %>
+          <input id=<%="acd-check#{i}"%> class="acd-check" type="checkbox">
+          <label class="acd-label" for=<%="acd-check#{i}"%>><%= key[0].strftime("%Y年%m月") %>(<%= key[1] %>)</label>
+          <div class="acd-content">
+            <%= link_to "#{article_title}", article_path(article_id) %>
+          </div>
+        <% end %> 
+      </div>
     <div>
   </div>
 </div>
