@@ -1,4 +1,3 @@
-
 .ribbon14 {  
   position: absolute;
   top: 0;
@@ -129,4 +128,28 @@
   font-size: 27px;
   text-align: right;
   color: #AF7E7E;
+}
+@media screen and (max-width:480px) {
+  .ribbon14-wrapper{
+    display: none;
+  }
+  .profile_img{
+    margin: 0 auto;
+  }
+  .lisblanc-text, .name, .yuriko_kana{
+    font-size: 50px;
+    font-family: 'MS PMincho';
+    padding: 0;
+    text-align: center;
+  }
+  .col-sm-8{
+    margin-left: 25%;
+  }
+  .name{
+    display: block;
+    width: 80%;
+  }
+  .ishidayuriko{
+    font-size: 40px;
+  }
 }
