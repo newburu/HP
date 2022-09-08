@@ -97,10 +97,10 @@
   width: 100px;
   height: 100px;
   border-radius: 20px;
-  margin-left: 75px;
 }
 .message{
   margin: 0 auto;
+  width: 75%;
 }
 .message-text{
   text-align: center;
@@ -125,9 +125,10 @@
   color: #AF7E7E;
 }
 .yurikosname{
-  font-size: 27px;
+  font-size: 30px;
   text-align: right;
   color: #AF7E7E;
+  font-weight: bold;
 }
 @media screen and (max-width:480px) {
   .ribbon14-wrapper{
@@ -135,15 +136,18 @@
   }
   .profile_img{
     margin: 0 auto;
+    width: 350px;
+    height: 365px;
+    margin-top: 10%;
+  }
+  .lifestyle{
+    font-size: 40px;
   }
   .lisblanc-text, .name, .yuriko_kana{
-    font-size: 50px;
+    font-size: 30px;
     font-family: 'MS PMincho';
     padding: 0;
     text-align: center;
-  }
-  .col-sm-8{
-    margin-left: 25%;
   }
   .name{
     display: block;
@@ -152,4 +156,29 @@
   .ishidayuriko{
     font-size: 40px;
   }
+  .sns{
+    display: flex;
+    justify-content: normal;
+    align-items: normal;
+  }  
+  .insta, .facebook{
+    width: 140px;
+    height: 140px;
+    margin: 0;
+  }
+  .line{
+    width: 60px;
+    height: 60px;
+    margin-top: 40px;
+    margin-left: 45px;
+  }
+  .message{
+    width: 100%;
+  }
+  .message-title{
+    font-size: 40px;
+  }
+}
+@media screen and (min-width: 768px){
+  .br-sp {display: none; }
 }
