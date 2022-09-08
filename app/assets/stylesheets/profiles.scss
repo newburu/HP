@@ -132,6 +132,7 @@
   color: #AF7E7E;
   font-weight: bold;
 }
+// スマホサイズ
 @media screen and (max-width:480px) {
   .ribbon14-wrapper{
     display: none;
@@ -183,4 +184,8 @@
 }
 @media screen and (min-width: 768px){
   .br-sp {display: none; }
+}
+// タブレットサイズ
+@media screen and (max-width: 1024px) and (orientation: portrait){
+  
 }
