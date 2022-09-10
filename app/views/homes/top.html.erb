@@ -1,42 +1,42 @@
-<nav class="navbar-expand-lg" id="navbarSupportedContent">
+<nav class="navbar navbar-expand-lg" id="navbarSupportedContent">
   <div class="container-fluid">
-    <div class="row">
-      <div class="col-7">
+    <div class="row no-gutters">
+      <div class="col-12 col-md-7">
         <div class="collapse navbar-collapse">
-          <ul class="navbar-nav mr-auto">
-            <li class='nav-item'>
-              <%= link_to root_path, {class: 'nav-link text-white'} do %>
-                <p class='menu'>Top</p>
-                <span class='menu-text'>トップ</span>
-              <% end %>
-            </li>
-            <li class="nav-item">
-              <%= link_to profiles_path, {class: "nav-link text-white"} do %>
-                <p class='menu'>Profile</p>
-                <span class='menu-text'>プロフィール</span>
-              <% end %>
-            </li>
-            <li class="nav-item">
-              <%= link_to "https://ameblo.jp/li-14", {class: "nav-link text-white"} do %>
-                <p class='menu'>Column</p>
-                <span class='menu-text'>コラム</span>
-              <% end %>
-            </li>
-            <li class="nav-item">
-              <%= link_to new_contacts_path, {class: "nav-link text-white"} do %>
-                <p class='menu'>Contact</p>
-                <span class='menu-text'>お知らせ</span>
-              <% end %>
-            </li>
-          </ul>
-        </div>
-        <div class='text-posission'>
-          <h2 class='all-woman'>すべての女性に</h2><br><span class="bright_future">”輝く未来を”</span>
-        </div>
+        <ul class="navbar-nav mr-auto">
+          <li class='nav-item'>
+            <%= link_to root_path, {class: 'nav-link text-white'} do %>
+              <p class='menu'>Top</p>
+              <span class='menu-text'>トップ</span>
+            <% end %>
+          </li>
+          <li class="nav-item">
+            <%= link_to profiles_path, {class: "nav-link text-white"} do %>
+              <p class='menu'>Profile</p>
+              <span class='menu-text'>プロフィール</span>
+            <% end %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "https://ameblo.jp/li-14", {class: "nav-link text-white"} do %>
+              <p class='menu'>Column</p>
+              <span class='menu-text'>コラム</span>
+            <% end %>
+          </li>
+          <li class="nav-item">
+            <%= link_to new_contacts_path, {class: "nav-link text-white"} do %>
+              <p class='menu'>Contact</p>
+              <span class='menu-text'>お知らせ</span>
+            <% end %>
+          </li>
+        </ul>
       </div>
-      <div class="col-5">
-        <%= image_tag "top_image.JPG", class: "yrk" %>
+      <div class='text-posission'>
+        <h2 class='all-woman'>すべての女性に</h2><br><span class="bright_future">”輝く未来を”</span>
       </div>
+    </div>
+    <div class="col-12 col-md-5">
+      <%= image_tag "top_image.JPG", class: "yrk" %>
+      <%= image_tag "top_image2.JPG", class: "sp_image" %>
     </div>
   </div>
 </nav>
@@ -57,32 +57,42 @@
 </div>
 
 <div class="phrase">
-  <p>生まれ持った”肌の色,骨格,顔のタイプ”から<br>あなたの魅力を引き出します</p>
-  <%= image_tag "bird.png", class: "bird" %>
+  <p>生まれ持った”<br class="br-sp">肌の色,骨格,顔の<br class="br-sp">タイプ”から<br>あなたの魅力を<br class="br-sp">引き出します</p> 
+  <%= image_tag "bird.png", class: "bird" %> 
 </div>
 
-<div class="solution">
+ <div class="solution">
   <h2>Solution</h2>
 </div>
 
 <div class="container-fluid">
   <div class="row">
-    <div class="col-5" id="color">
-      <p class="color">Color</p>
-      <%= image_tag "palette.png", class: "palette" %>
+    <div class="col-12 col-md-5" id="color">
+      <%
+=begin%>
+ <p class="color">Color</p>
+      <%= image_tag "palette.png", class: "palette" %> 
+<%
+=end%>
     </div>
-    <div class="col-7">
+    <%
+=begin%>
+ <div class="col-12 col-md-7">
       <div class="color-word">
         <p class="color-text"><span class="first-text">あ</span>なただけの”カタチ”.............<br>
           □似合うデザイン<br>
           □似合う素材
         </p>
       </div>
-    </div>
+    </div> 
+<%
+=end%>
   </div>
 </div>
 
-<div class="wrapper">
+<%
+=begin%>
+ <div class="wrapper">
   <div class="container-fluid">
     <div class="row">
       <div class="col-6">
@@ -162,4 +172,6 @@
       </p>
     </div>
   </div> 
-</div>
+</div>  
+<%
+=end%>
