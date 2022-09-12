@@ -21,9 +21,8 @@ class Article < ApplicationRecord
   validates :body,      presence: true
 
 
-  def self.divide_monthly
-    group(:created_at)
-    .order(Arel.sql("strftime('%Y%m', created_at) desc"))
-    .count
+  def created_ym
+    self.created_at.strftime("%Y年%m月")
   end
+
 end
