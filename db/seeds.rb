@@ -15,7 +15,7 @@ Account.create!(
     status: "published",
     title: "タイトル#{i}",
     body: "本文#{i}が入ります。",
-    created_at: "2022/9/#{i}"
+    created_at: "2022/9/#{i+1}"
   )
 end
 
@@ -25,7 +25,7 @@ end
     status: "published",
     title: "タイトル#{i}",
     body: "本文#{i}が入ります。",
-    created_at: "2022/10/#{i}"
+    created_at: "2022/10/#{i+1}"
   )
 end
 
@@ -35,6 +35,6 @@ end
     status: "published",
     title: "タイトル#{i}",
     body: "本文#{i}が入ります。",
-    created_at: "2022/11/#{i}"
+    created_at: "2022/11/#{i+1}"
   )
 end
