@@ -9,7 +9,6 @@
   background-color: #FAE6E6;
   opacity: 0.3;
 }
-
 @keyframes fadeUpAnime{
   from {
   opacity: 0;
@@ -20,4 +19,7 @@
   opacity: 1;
   transform: translateY(0);
   }
+}
+.range{
+  width: auto;
 }
