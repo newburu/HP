@@ -17,11 +17,15 @@
     </div>
     <div class="col-5">
       <div class="YM">      
-        <% @articles_per_months.each_with_index do |key, i| %>
-          <% article_title= Article.where(created_at: key[0])[0].title %>
-          <% article_id = Article.where(created_at: key[0])[0].id %>
-          <input id=<%="acd-check#{i}"%> class="acd-check" type="checkbox">
-          <label class="acd-label" for=<%="acd-check#{i}"%>><%= key[0].strftime("%Y年%m月") %>(<%= key[1] %>)</label>
+        <% @articles_per_months.each do |key, value| %>
+          <% article_id = Article.where(created_at: key)[0].id %>
+          <% date = key.strftime("%Y年%m月").gsub('年', '/').gsub('月', '/') # 文字列でDate型変換の準備 %>
+          <% date = Date.parse(date)# Date型に変換 %>
+          <% last_date = date.end_of_month # 月の最終日を取得 %>
+          <% article_instance = Article.where(created_at: date..last_date) # 範囲検索 %>
+          <% article_title= article_instance[0].title %>
+          <input id=<%="acd-check1"%> class="acd-check" type="checkbox">
+          <label class="acd-label" for="acd-check1"><%= key.strftime("%Y年%m月") %>(<%= value %>)</label>
           <div class="acd-content">
             <%= link_to "#{article_title}", article_path(article_id) %>
           </div>
