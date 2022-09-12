@@ -9,15 +9,32 @@ Account.create!(
   email: "lilyko14@gmail.com",
   password: "hcRnZ0Kh029pUo86z0lMXwaxafYPcldu"
 )
-25.times do |i|
+2.times do |i|
   Article.create!(
     thumbnail: "https://thumb.photo-ac.com/2d/2d12c0da978d4c5c8a3db90ed7113add_t.jpeg",
     status: "published",
     title: "タイトル#{i}",
-    body: "本文#{i}が入ります。本文#{i}が入ります。本文#{i}が入ります。本文#{i}が入ります。本文#{i}が入ります。本文#{i}が入ります。本文#{i}が入ります。
-          本文#{i}が入ります。本文#{i}が入ります。本文#{i}が入ります。本文#{i}が入ります。本文#{i}が入ります。本文#{i}が入ります。本文#{i}が入ります。
-          本文#{i}が入ります。本文#{i}が入ります。本文#{i}が入ります。本文#{i}が入ります。本文#{i}が入ります。本文#{i}が入ります。本文#{i}が入ります。
-          本文#{i}が入ります。",
-    created_at: Time.current
+    body: "本文#{i}が入ります。",
+    created_at: "2022/9/#{i}"
+  )
+end
+
+3.times do |i|
+  Article.create!(
+    thumbnail: "https://thumb.photo-ac.com/2d/2d12c0da978d4c5c8a3db90ed7113add_t.jpeg",
+    status: "published",
+    title: "タイトル#{i}",
+    body: "本文#{i}が入ります。",
+    created_at: "2022/10/#{i}"
+  )
+end
+
+5.times do |i|
+  Article.create!(
+    thumbnail: "https://thumb.photo-ac.com/2d/2d12c0da978d4c5c8a3db90ed7113add_t.jpeg",
+    status: "published",
+    title: "タイトル#{i}",
+    body: "本文#{i}が入ります。",
+    created_at: "2022/11/#{i}"
   )
 end
