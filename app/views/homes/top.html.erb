@@ -1,34 +1,8 @@
-<nav class="navbar navbar-expand-lg" id="navbarSupportedContent">
-  <div class="container-fluid">
-    <div class="row no-gutters">
-      <div class="col-12 col-md-7">
-        <div class="collapse navbar-collapse">
-        <ul class="navbar-nav mr-auto">
-          <li class='nav-item'>
-            <%= link_to root_path, {class: 'nav-link text-white'} do %>
-              <p class='menu'>Top</p>
-              <span class='menu-text'>トップ</span>
-            <% end %>
-          </li>
-          <li class="nav-item">
-            <%= link_to profiles_path, {class: "nav-link text-white"} do %>
-              <p class='menu'>Profile</p>
-              <span class='menu-text'>プロフィール</span>
-            <% end %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "https://ameblo.jp/li-14", {class: "nav-link text-white"} do %>
-              <p class='menu'>Column</p>
-              <span class='menu-text'>コラム</span>
-            <% end %>
-          </li>
-          <li class="nav-item">
-            <%= link_to new_contacts_path, {class: "nav-link text-white"} do %>
-              <p class='menu'>Contact</p>
-              <span class='menu-text'>お知らせ</span>
-            <% end %>
-          </li>
-        </ul>
+<%= render "shared/header" %>
+<nav class="navbar-expand-lg" id="navbarSupportedContent">
+  <div class="row no-gutters">
+    <div class="col-12 col-md-7">
+      <div class="collapse navbar-collapse">
       </div>
       <div class='text-posission'>
         <h2 class='all-woman'>すべての女性に</h2><br><span class="bright_future">”輝く未来を”</span>
@@ -61,54 +35,40 @@
   <%= image_tag "bird.png", class: "bird" %> 
 </div>
 
- <div class="solution">
+<div class="solution">
   <h2>Solution</h2>
 </div>
 
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-12 col-md-5" id="color">
-      <%
-=begin%>
- <p class="color">Color</p>
-      <%= image_tag "palette.png", class: "palette" %> 
-<%
-=end%>
-    </div>
-    <%
-=begin%>
- <div class="col-12 col-md-7">
-      <div class="color-word">
-        <p class="color-text"><span class="first-text">あ</span>なただけの”カタチ”.............<br>
-          □似合うデザイン<br>
-          □似合う素材
-        </p>
-      </div>
-    </div> 
-<%
-=end%>
+<div class="row no-gutters">
+  <div class="col-12 col-md-5" id="color">
+    <p class="color">Color</p>
+    <%= image_tag "palette.png", class: "palette" %> 
   </div>
+  <div class="col-12 col-md-7">
+    <div class="color-word">
+      <p class="color-text"><span class="first-text">あ</span>なただけの”カタチ”.............<br>
+        □似合うデザイン<br>
+        □似合う素材
+      </p>
+    </div>
+  </div> 
 </div>
 
-<%
-=begin%>
  <div class="wrapper">
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-6">
-        <div class="styling-image">
-          <p class="style-text"><span class="first-text">あ</span>なただけの”色”.............<br>
-            □似合うメイクの色<br>
-            □似合うファッションの色
-          </p>
-        </div>
+  <div class="row no-gutters">
+    <div class="col-12 col-md-6">
+      <div class="styling-image">
+        <p class="style-text"><span class="first-text">あ</span>なただけの”色”.............<br>
+          □似合うメイクの色<br>
+          □似合うファッションの色
+        </p>
       </div>
-      <div class="col-6" id="style">
-        <p class="style">Style</p>
-        <div class="face_type">
-          <%= image_tag "woman.png", class: "woman" %>
-          <p class="faceType">FaceType</p>
-        </div>
+    </div>
+    <div class="col-12 col-md-6" id="style">
+      <p class="style">Style</p>
+      <div class="face_type">
+        <%= image_tag "woman.png", class: "woman" %>
+        <p class="faceType">FaceType</p>
       </div>
     </div>
   </div>
@@ -118,22 +78,20 @@
   <h3>Special Option</h3>
 </div>
 
-<div class="wrapper">
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-6">
-        <div class="consult">
-          <p class="style-text"><span class="first-text">あ</span>なただけの”キャリア”.............<br>
-            □女性起業<br>
-            □マインドセット（自信の付け方）
-          </p>
-        </div>
+<div class="wrapper2">
+  <div class="row no-gutters">
+    <div class="col-12 col-md-6">
+      <div class="consult">
+        <p class="style-text"><span class="first-text">あ</span>なただけの”キャリア”.............<br>
+          □女性起業<br>
+          □マインドセット（自信の付け方）
+        </p>
       </div>
-      <div class="col-6" id="style">
-        <p class="consulting">Consulting</p>
-        <div class="face_type">
-          <%= image_tag "class.png", class: "classes" %>
-        </div>
+    </div>
+    <div class="col-12 col-md-6" id="style">
+      <p class="consulting">Consulting</p>
+      <div class="face_type">
+        <%= image_tag "class.png", class: "classes" %>
       </div>
     </div>
   </div>
@@ -147,7 +105,7 @@
 </div>
 
 <div id="salon">
-  <h4>当サロン３つの特徴</h4>
+  <h4>当サロン<br class="br-sp">３つの特徴</h4>
   <div class="number01">
     <div class="num01">
       <p class="num-01">01</p>
@@ -156,6 +114,7 @@
       </p>
     </div>
   </div>
+
   <div class="number02">
     <div class="num02">
       <p class="num-02">02</p>
@@ -164,14 +123,13 @@
       </p>
     </div>
   </div>
+
   <div class="number03">
     <div class="num03">
       <p class="num-03">03</p>
       <p class="num03-text">
-        プライベートサロンのため<br>周りを気にせず、落ち着ける空間
+        プライベートサロンの<br class="br-sp">ため、<br>周りを気にせず、<br class="br-sp">落ち着ける空間
       </p>
     </div>
-  </div> 
-</div>  
-<%
-=end%>
+  </div>  
+</div>   

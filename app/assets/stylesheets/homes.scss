@@ -9,7 +9,7 @@
   background-image: linear-gradient(180deg, #F1DCDC 75%, #FFFFFF 100%);
 }
 .nav-link{
-  text-shadow: 10px 10px 10px #808080
+  text-shadow: 1px 1px 1px #808080;
 }
 .menu{
   font-size: 35px;
@@ -21,11 +21,10 @@
   height: 65px; 
 }
 .yrk{
-  margin-top: 0%;
   box-shadow: 0 0 2px #333;
   opacity: 0.5;
-  width: 105%;
-  height: 100%;
+  width: 100%;
+  height: 95%;
 }
 .sp_image{
   display: none;
@@ -93,14 +92,14 @@
   transform: scale(-1, 1);
 }
 .solution{
-  margin: 15% auto;
+  margin: 35% auto;
 }
 .solution h2{
   text-align: center;
   font-size: 100px;
 }
 #color{
-  margin-top: 5%;
+  margin: 15% auto;
   background-color:#FAE6E6;
   border-radius: 45px;
   height: 450px;
@@ -145,7 +144,7 @@
   height: 600px;
 }
 .style-text{
-  margin-top: 30%;
+  margin-top: 20%;
   padding-right: 10%;
   background-color: rgba(251, 235, 235, 0.3);
   border-radius: 45px;
@@ -183,19 +182,20 @@
 }
 .special_option{
   margin-top: 20%;
+  padding: 30% 0;
 }
 .special_option h3{
-  font-size: 65px;
+  font-size: 50px;
   text-align: center;
 }
 .consult{
   background-image: url("consult.jpg");
   box-shadow: 0 0 8px #333;
   background-size: cover;
-  padding-top: 60%;
-  padding-right: 20%;
+  padding-top: 80%;
+  margin-left: 10%;
   width: 600px;
-  height: 600px;
+  height: 450px;
 }
 .consulting{
   font-weight: bold;
@@ -209,12 +209,10 @@
 .salon{
   margin-top: 15%;
   margin-bottom: 10%;
-  margin-left:45%;
 }
 .salon h2{
+  text-align: center;
   font-size: 65px;
-  border-bottom: solid 2px black;
-  width: fit-content;
 }
 .salon-image{
   text-align: center;
@@ -237,11 +235,6 @@
 .number01{
   margin-top: 10%;
 }
-.num-01{
-  font-size: 100px;
-  letter-spacing: 0.2px;
-  opacity: 0.5;
-}
 .num01{
   border: 1px solid #F28686;
   width: 500px;
@@ -250,6 +243,11 @@
   text-align: center;
   color: #AD9292;
   font-size: 35px;
+}
+.num-01{
+  font-size: 100px;
+  letter-spacing: 0.2px;
+  opacity: 0.5;
 }
 .num01-text{
   color: #814C4C;
@@ -354,5 +352,88 @@
   .bird{
     width: 390px;
     height: 450px;
+  }
+  .palette{
+    margin-left: 23%;
+    margin-top: 20%;
+  }  
+  .color-word{
+    margin-left: 0%;
+    width: 390px;
+    height: 350px;
+  }
+  .wrapper{
+    margin-top: 135%;
+  }
+  .styling-image{
+    padding-left: 0%;
+    width: 390px;
+    height: 350px;
+  }
+  #style{
+    margin-top: 70%;
+    height: 425px;
+  }
+  .faceType{
+    padding-left: 10%;
+    margin-top: 25%;
+    font-size: 51px;
+  }
+  .consult{
+    width: 390px;
+    height: 350px;
+    padding-right: 0%;
+    margin: 0;
+  }
+  .style-text{
+    margin: 0;
+    padding-right: 0%;
+    margin-top: 15%;
+  }
+  .wrapper2{
+    margin-top: 45%;
+  }
+  .salon_image{
+    height: 500px;
+    width: 100%;
+    margin-bottom: 10%;
+  }
+  .num01, .num03{
+    width: 100%;    
+    height: 500px;
+    margin-left: 0%;
+    text-align: center;
+    font-size: 35px;  
+  }
+  .num01-text, .num03-text{
+    text-align: center;
+    font-size: 50px;
+    width: 100%;
+    box-sizing: border-box;
+    margin-left: 0%;
+    margin-top: 40%;
+  }
+  .number02{
+    margin-left: 0%;
+    margin-top: 15%;
+  }
+  .num02{
+    width: 100%;
+    height: 500px;
+    margin-left: 0%;
+    text-align: center;
+    font-size: 35px;  
+  }
+  .num02-text{
+    text-align: center;
+    font-size: 40px;
+    width: 100%;
+    box-sizing: border-box;
+    margin-left: 0%;
+    margin-top: 40%;
+  }
+  .num03-text{
+    font-size: 40px;
+    text-indent: 0;
   }
 }
