@@ -18,12 +18,16 @@
     <div class="col-5">
       <div class="YM">      
         <% @articles_per_months.each_with_index do |(key, articles_per_months), idx| %>
-          <% article_id = articles_per_months.first.id %>
-          <% article_title = articles_per_months.first.title %>
           <input id=<%="acd-check#{idx}"%> class="acd-check" type="checkbox">
           <label class="acd-label" for="<%="acd-check#{idx}"%>"><%= key %>(<%= articles_per_months.count %>)</label>
           <div class="acd-content">
-            <%= link_to "#{article_title}", article_path(article_id) %>
+            <% articles_per_months.each do |articles_per_month| %>
+              <div>
+                <% article_id = articles_per_month.id %>
+                <% article_title = articles_per_month.title %>
+                <%= link_to "#{article_title}", article_path(article_id) %>
+              </div>
+            <% end %> 
           </div>
         <% end %> 
       </div>
